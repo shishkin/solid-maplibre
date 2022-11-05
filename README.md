@@ -12,3 +12,7 @@ You might want to check out [solid-map-gl](https://github.com/GIShub4/solid-map-
 
 - 100% TypeScript
 - Native MapLibre typings
+
+## Usage
+
+See [examples](examples).
