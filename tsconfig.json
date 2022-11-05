@@ -11,7 +11,9 @@
     "outDir": "dist",
     "declaration": true,
     "sourceMap": true,
-    "allowJs": true
+    "allowJs": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
