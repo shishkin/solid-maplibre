@@ -8,6 +8,11 @@
   "scripts": {
     "build": "eslint . && tsc -b"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shishkin/solid-maplibre.git"
+  },
+  "homepage": "https://github.com/shishkin/solid-maplibre",
   "keywords": [
     "solidjs",
     "maplibre"
