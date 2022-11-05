@@ -17,6 +17,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "<>"
-          git checkout origin/dev
-          git merge -m 'chore: merge main into dev' main
-          git push origin dev
+          git fetch --unshallow
+          git checkout dev
+          git pull
+          git merge main -m 'chore: merge main into dev'
+          git push
