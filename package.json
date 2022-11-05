@@ -1,6 +1,6 @@
 {
   "name": "solid-maplibre",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SolidJS wrapper around MapLibre GL JS",
   "type": "module",
   "main": "dist/index.js",
