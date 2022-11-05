@@ -1,5 +1,4 @@
 import { CircleLayerSpecification, MapLayerEventType } from "maplibre-gl";
-import "maplibre-gl/dist/maplibre-gl.css";
 import { onCleanup, createUniqueId, splitProps } from "solid-js";
 import { mapEffect, useMap } from "./map";
 import { useSource } from "./source";

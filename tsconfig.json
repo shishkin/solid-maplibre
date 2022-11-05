@@ -8,13 +8,13 @@
     "isolatedModules": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "outDir": "dist",
-    "declaration": true,
-    "sourceMap": true,
+    "skipLibCheck": true,
     "allowJs": true,
+    "noEmit": true,
+    "types": ["vite/client"],
     "jsx": "preserve",
     "jsxImportSource": "solid-js"
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "include": ["**/*"],
+  "exclude": ["node_modules", "dist"]
 }

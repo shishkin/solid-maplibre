@@ -1,4 +1,4 @@
-import { SourceSpecification, Source } from "maplibre-gl";
+import { SourceSpecification } from "maplibre-gl";
 import { createContext, JSX, onCleanup, useContext, createUniqueId } from "solid-js";
 import { mapEffect, useMap } from "./map";
 
