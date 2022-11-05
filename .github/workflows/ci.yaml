@@ -5,8 +5,8 @@ on:
   pull_request:
 
 jobs:
-  release:
-    name: Release
+  ci:
+    name: CI
     runs-on: ubuntu-latest
 
     steps:
