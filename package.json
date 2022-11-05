@@ -1,0 +1,33 @@
+{
+  "name": "solid-maplibre",
+  "version": "0.1.0",
+  "description": "SolidJS wrapper around MapLibre GL JS",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "eslint . && tsc -b"
+  },
+  "keywords": [
+    "solidjs",
+    "maplibre"
+  ],
+  "author": "Sergey Shishkin <sergey@shishkin.org>",
+  "license": "MIT",
+  "peerDependencies": {
+    "maplibre-gl": "*",
+    "solid-js": "*"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.4.10",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-solid": "^0.8.0",
+    "maplibre-gl": "^2.4.0",
+    "prettier": "^2.7.1",
+    "solid-js": "^1.6.1",
+    "typescript": "^4.8.4"
+  }
+}
