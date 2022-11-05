@@ -13,7 +13,7 @@ jobs:
 
       - name: Merge main -> dev
         run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "<>"
-        git checkout dev
-        git merge -m 'chore: merge main into dev' main
+          git config user.name "github-actions[bot]"
+          git config user.email "<>"
+          git checkout dev
+          git merge -m 'chore: merge main into dev' main
