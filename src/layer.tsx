@@ -1,4 +1,4 @@
-import { CircleLayerSpecification, MapLayerEventType } from "maplibre-gl";
+import * as maplibre from "maplibre-gl";
 import { onCleanup, createUniqueId, splitProps } from "solid-js";
 import { mapEffect, useMap } from "./map";
 import { useSource } from "./source";
@@ -6,11 +6,11 @@ import { deepEqual } from "./util";
 
 export type LayerProps = {
   id?: string;
-  layer: Omit<CircleLayerSpecification, "id" | "source">;
+  layer: Omit<maplibre.CircleLayerSpecification, "id" | "source">;
 } & LayerEvents;
 
 type LayerEvents = Partial<{
-  [P in keyof MapLayerEventType as `on${P}`]: (e: MapLayerEventType[P]) => void;
+  [P in keyof maplibre.MapLayerEventType as `on${P}`]: (e: maplibre.MapLayerEventType[P]) => void;
 }>;
 
 export function Layer(initial: LayerProps) {

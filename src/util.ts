@@ -1,5 +1,5 @@
 import { Geometry, Position } from "geojson";
-import { GeoJSONSource, Source } from "maplibre-gl";
+import * as maplibre from "maplibre-gl";
 import diff from "microdiff";
 
 export function deepEqual(a: unknown, b: unknown): boolean {
@@ -11,7 +11,7 @@ export function deepEqual(a: unknown, b: unknown): boolean {
   return a === b;
 }
 
-export function isGeoJSONSource(source?: Source): source is GeoJSONSource {
+export function isGeoJSONSource(source?: maplibre.Source): source is maplibre.GeoJSONSource {
   return source?.type === "geojson";
 }
 

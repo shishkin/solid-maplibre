@@ -1,10 +1,10 @@
-import { SourceSpecification } from "maplibre-gl";
+import * as maplibre from "maplibre-gl";
 import { createContext, JSX, onCleanup, useContext, createUniqueId } from "solid-js";
 import { mapEffect, useMap } from "./map";
 
 export type SourceProps = {
   id?: string;
-  source: SourceSpecification;
+  source: maplibre.SourceSpecification;
   children?: JSX.Element;
 };
 

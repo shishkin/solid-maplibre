@@ -1,16 +1,16 @@
 import { mapEffect } from "./map";
-import { LngLatLike, Popup as MapPopup, PopupOptions } from "maplibre-gl";
+import * as maplibre from "maplibre-gl";
 import { onCleanup, splitProps } from "solid-js";
 
-export type PopUpProps = Partial<PopupOptions> & {
-  position?: LngLatLike;
+export type PopUpProps = Partial<maplibre.PopupOptions> & {
+  position?: maplibre.LngLatLike;
   content?: string;
 };
 
 export function Popup(initial: PopUpProps) {
   const [props, options] = splitProps(initial, ["position", "content"]);
 
-  const popup = new MapPopup(options);
+  const popup = new maplibre.Popup(options);
 
   mapEffect((map) => {
     if (props.position && props.content) {

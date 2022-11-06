@@ -1,4 +1,4 @@
-import { Map as MapLibre, MapEventType, MapOptions } from "maplibre-gl";
+import * as maplibre from "maplibre-gl";
 import {
   createContext,
   createSignal,
@@ -12,11 +12,11 @@ import {
   splitProps,
 } from "solid-js";
 
-const MapContext = createContext<Accessor<MapLibre | undefined>>();
+const MapContext = createContext<Accessor<maplibre.Map | undefined>>();
 
 export const useMap = () => useContext(MapContext);
 
-export const mapEffect = (f: (map: MapLibre) => void) =>
+export const mapEffect = (f: (map: maplibre.Map) => void) =>
   createEffect(() => {
     const map = useMap()?.();
     map && f(map);
@@ -25,12 +25,12 @@ export const mapEffect = (f: (map: MapLibre) => void) =>
 export type MapProps = {
   style?: JSX.CSSProperties;
   cursor?: string;
-  options?: Partial<Omit<MapOptions, "container">>;
+  options?: Partial<Omit<maplibre.MapOptions, "container">>;
   children?: JSX.Element;
 } & MapEvents;
 
 type MapEvents = Partial<{
-  [P in keyof MapEventType as `on${P}`]: (e: MapEventType[P]) => void;
+  [P in keyof maplibre.MapEventType as `on${P}`]: (e: maplibre.MapEventType[P]) => void;
 }>;
 
 const defaultProps: Partial<MapProps> = {
@@ -41,10 +41,10 @@ export function Map(initial: MapProps) {
   const mergedProps = mergeProps(defaultProps, initial);
   const [props, events] = splitProps(mergedProps, ["style", "cursor", "options", "children"]);
   const container = (<div style={props.style} />) as HTMLDivElement;
-  const [map, setMap] = createSignal<MapLibre>();
+  const [map, setMap] = createSignal<maplibre.Map>();
 
   onMount(() => {
-    const map = new MapLibre({
+    const map = new maplibre.Map({
       style:
         "https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL",
       ...props.options,
