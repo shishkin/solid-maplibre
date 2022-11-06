@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/shishkin/solid-maplibre/compare/v0.2.0...v0.2.1) (2022-11-06)
+
+
+### Bug Fixes
+
+* revert build to use bundler ([7139d68](https://github.com/shishkin/solid-maplibre/commit/7139d681a1cd4657c09a1fd1c34b0681a3553361))
+
 # [0.2.0](https://github.com/shishkin/solid-maplibre/compare/v0.1.2...v0.2.0) (2022-11-06)
 
 
