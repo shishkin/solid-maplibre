@@ -1,3 +1,17 @@
+# [0.2.0](https://github.com/shishkin/solid-maplibre/compare/v0.1.2...v0.2.0) (2022-11-06)
+
+
+### Bug Fixes
+
+* avoid named imports of maplibre ([f0bf186](https://github.com/shishkin/solid-maplibre/commit/f0bf18673373c3c27c6e92c78ba1e1239755ffe1))
+* export controls ([4c7e8b8](https://github.com/shishkin/solid-maplibre/commit/4c7e8b80dee248d09b6145d643d5391231cd433e))
+* use tsc for build ([4dc07e6](https://github.com/shishkin/solid-maplibre/commit/4dc07e6568234238439ada4b116a27d7f8329cb0))
+
+
+### Features
+
+* add marker ([e04aab5](https://github.com/shishkin/solid-maplibre/commit/e04aab5ba6ae5354ede6b9912045d4dbc4be8ae8))
+
 ## [0.1.2](https://github.com/shishkin/solid-maplibre/compare/v0.1.1...v0.1.2) (2022-11-05)
 
 
