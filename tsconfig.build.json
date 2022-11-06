@@ -3,8 +3,9 @@
   "compilerOptions": {
     "outDir": "dist",
     "declaration": true,
+    "sourceMap": true,
     "noEmit": false,
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": false
   },
   "include": ["src/index.ts"]
 }
