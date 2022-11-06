@@ -1,12 +1,11 @@
 name: CI
 
 on:
-  push:
-  pull_request:
+  workflow_dispatch:
 
 jobs:
-  ci:
-    name: CI
+  release:
+    name: Release
     runs-on: ubuntu-latest
 
     steps:
@@ -22,3 +21,9 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm run semantic-release
