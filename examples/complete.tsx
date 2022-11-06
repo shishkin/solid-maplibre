@@ -1,4 +1,4 @@
-import { Layer, Map, Popup, Source } from "../src";
+import { Layer, Map, Marker, Popup, Source } from "../src";
 import { NavigationControl, ScaleControl } from "../src/controls";
 import "maplibre-gl/dist/maplibre-gl.css";
 
@@ -49,6 +49,7 @@ export function Complete() {
             }}
           />
         </Source>
+        <Marker position={[-76.53063297271729, 39.18174077994108]} />
         <Popup
           anchor="top"
           offset={12}
@@ -56,7 +57,7 @@ export function Complete() {
           closeOnClick={false}
           closeButton={false}
           position={[-76.53063297271729, 39.18174077994108]}
-          content="Popup Marker"
+          content="Popup"
         />
       </Map>
     </section>
