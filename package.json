@@ -10,8 +10,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "clean": "rm -rf dist/",
-    "build": "npm run clean && npm run check && tsc -p tsconfig.build.json",
+    "build": "npm run check && vite build && tsc -p tsconfig.typings.json",
     "check": "eslint . && tsc -b",
     "semantic-release": "semantic-release",
     "prepare": "husky install"
