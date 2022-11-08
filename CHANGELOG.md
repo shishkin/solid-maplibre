@@ -1,3 +1,10 @@
+## [0.2.3](https://github.com/shishkin/solid-maplibre/compare/v0.2.2...v0.2.3) (2022-11-08)
+
+
+### Bug Fixes
+
+* trigger release ([dc97156](https://github.com/shishkin/solid-maplibre/commit/dc97156aeb635f46dfdad2b214e4a5e1acec8d6a))
+
 ## [0.2.2](https://github.com/shishkin/solid-maplibre/compare/v0.2.1...v0.2.2) (2022-11-08)
 
 
