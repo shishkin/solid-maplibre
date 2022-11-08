@@ -1,6 +1,6 @@
 import * as maplibre from "maplibre-gl";
 import { createSignal, JSX, onCleanup, splitProps } from "solid-js";
-import { mapEffect, useMap } from "./map";
+import { useMapEffect, useMap } from "./map";
 
 export const createControl =
   <Control extends maplibre.IControl, Options>(ctor: { new (options: Options): Control }) =>
@@ -8,7 +8,7 @@ export const createControl =
     const [own, options] = splitProps(props, ["position"]);
     const [control, setControl] = createSignal<maplibre.IControl>();
 
-    mapEffect((map) => {
+    useMapEffect((map) => {
       const existing = control();
       if (!existing) {
         const created = new ctor(options.options || ({} as Options)) as maplibre.IControl;

@@ -1,6 +1,6 @@
 import * as maplibre from "maplibre-gl";
 import { onCleanup, createUniqueId, splitProps } from "solid-js";
-import { mapEffect, useMap } from "./map";
+import { useMapEffect, useMap } from "./map";
 import { useSource } from "./source";
 import { deepEqual } from "./util";
 
@@ -18,7 +18,7 @@ export function Layer(initial: LayerProps) {
   const id = props.id || createUniqueId();
   const sourceId = useSource();
 
-  mapEffect((map) => {
+  useMapEffect((map) => {
     if (!sourceId || map.getLayer(id)) return;
 
     map.addLayer({
@@ -28,7 +28,7 @@ export function Layer(initial: LayerProps) {
     });
   });
 
-  mapEffect((map) => {
+  useMapEffect((map) => {
     if (!map.getLayer(id)) return;
 
     for (const [k, v] of Object.entries(props.layer.paint || {})) {
@@ -44,7 +44,7 @@ export function Layer(initial: LayerProps) {
     }
   });
 
-  mapEffect((map) => {
+  useMapEffect((map) => {
     for (const [key, handler] of Object.entries(events)) {
       if (!key.startsWith("on")) continue;
 

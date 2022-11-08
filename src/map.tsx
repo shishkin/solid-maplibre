@@ -16,7 +16,7 @@ const MapContext = createContext<Accessor<maplibre.Map | undefined>>();
 
 export const useMap = () => useContext(MapContext);
 
-export const mapEffect = (f: (map: maplibre.Map) => void) =>
+export const useMapEffect = (f: (map: maplibre.Map) => void) =>
   createEffect(() => {
     const map = useMap()?.();
     map && f(map);

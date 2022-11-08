@@ -1,4 +1,4 @@
-import { mapEffect } from "./map";
+import { useMapEffect } from "./map";
 import * as maplibre from "maplibre-gl";
 import { onCleanup, splitProps } from "solid-js";
 
@@ -11,7 +11,7 @@ export function Marker(initial: MarkerProps) {
 
   const marker = new maplibre.Marker(options);
 
-  mapEffect((map) => {
+  useMapEffect((map) => {
     if (props.position) {
       marker.setLngLat(props.position).addTo(map);
     } else {

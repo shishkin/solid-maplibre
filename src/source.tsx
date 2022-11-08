@@ -1,6 +1,6 @@
 import * as maplibre from "maplibre-gl";
 import { createContext, JSX, onCleanup, useContext, createUniqueId } from "solid-js";
-import { mapEffect, useMap } from "./map";
+import { useMapEffect, useMap } from "./map";
 
 export type SourceProps = {
   id?: string;
@@ -15,7 +15,7 @@ export const useSource = () => useContext(SourceIdContext);
 export function Source(props: SourceProps) {
   const id = props.id || createUniqueId();
 
-  mapEffect((map) => {
+  useMapEffect((map) => {
     if (!map.getSource(id)) {
       map.addSource(id, props.source);
     }
