@@ -1,5 +1,5 @@
-import { Geometry, Position } from "geojson";
-import * as maplibre from "maplibre-gl";
+import type { GeoJSON, FeatureCollection, Geometry, Position } from "geojson";
+import type { Source, GeoJSONSource } from "maplibre-gl";
 
 export function deepEqual(a: unknown, b: unknown): boolean {
   if (typeof a !== typeof b) return false;
@@ -23,13 +23,11 @@ export function deepEqual(a: unknown, b: unknown): boolean {
   return a === b;
 }
 
-export function isGeoJSONSource(source?: maplibre.Source): source is maplibre.GeoJSONSource {
+export function isGeoJSONSource(source?: Source): source is GeoJSONSource {
   return source?.type === "geojson";
 }
 
-export function isFeatureCollection(
-  data: string | GeoJSON.GeoJSON
-): data is GeoJSON.FeatureCollection {
+export function isFeatureCollection(data: string | GeoJSON): data is FeatureCollection {
   return typeof data === "object" && data.type === "FeatureCollection";
 }
 
