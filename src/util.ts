@@ -1,12 +1,24 @@
 import { Geometry, Position } from "geojson";
 import * as maplibre from "maplibre-gl";
-import diff from "microdiff";
 
 export function deepEqual(a: unknown, b: unknown): boolean {
   if (typeof a !== typeof b) return false;
 
-  if (typeof a === "object" && typeof b === "object" && a !== null && b !== null)
-    return diff(a, b).length === 0;
+  if (typeof a === "object" && typeof b === "object" && a !== null && b !== null) {
+    for (const key in a) {
+      if (!(key in b)) return false;
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      if (!deepEqual((a as any)[key], (b as any)[key])) return false;
+    }
+    for (const key in b) {
+      if (!(key in a)) return false;
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      if (!deepEqual((a as any)[key], (b as any)[key])) return false;
+    }
+    return true;
+  }
 
   return a === b;
 }
