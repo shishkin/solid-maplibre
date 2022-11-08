@@ -10,6 +10,7 @@ import {
   mergeProps,
   createEffect,
   splitProps,
+  createMemo,
 } from "solid-js";
 
 const MapContext = createContext<Accessor<maplibre.Map | undefined>>();
@@ -54,13 +55,13 @@ export function Map(initial: MapProps) {
     map.once("load", () => setMap(map));
   });
 
-  createEffect((current) => {
-    if (current == props.cursor) return;
-
+  const interactive = createMemo(
+    () => typeof props.options?.interactive === "undefined" || props.options.interactive
+  );
+  createEffect(() => {
     const canvas = map()?.getCanvas();
-    if (canvas) canvas.style.cursor = props.cursor || "unset";
-    return props.cursor;
-  }, map()?.getCanvas().style.cursor);
+    if (canvas) canvas.style.cursor = props.cursor ?? interactive() ? "grab" : "auto";
+  });
 
   createEffect(() => {
     const m = map();

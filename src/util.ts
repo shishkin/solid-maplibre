@@ -8,14 +8,14 @@ export function deepEqual(a: unknown, b: unknown): boolean {
     for (const key in a) {
       if (!(key in b)) return false;
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      if (!deepEqual((a as any)[key], (b as any)[key])) return false;
+      if (!deepEqual((a as Record<string, unknown>)[key], (b as Record<string, unknown>)[key]))
+        return false;
     }
     for (const key in b) {
       if (!(key in a)) return false;
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      if (!deepEqual((a as any)[key], (b as any)[key])) return false;
+      if (!deepEqual((a as Record<string, unknown>)[key], (b as Record<string, unknown>)[key]))
+        return false;
     }
     return true;
   }
