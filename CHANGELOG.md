@@ -1,3 +1,12 @@
+## [0.2.2](https://github.com/shishkin/solid-maplibre/compare/v0.2.1...v0.2.2) (2022-11-08)
+
+
+### Bug Fixes
+
+* ensure compatibility with SSR ([beb0aeb](https://github.com/shishkin/solid-maplibre/commit/beb0aeba03135b4d996176db4f491ff4e4aaf6ee))
+* remove microdiff dependency ([298d07a](https://github.com/shishkin/solid-maplibre/commit/298d07a7c70f1b58ffa33b74905a5b76c39116ea))
+* rename mapEffect to fix linter warnings ([2ad995a](https://github.com/shishkin/solid-maplibre/commit/2ad995a9924c449b793e402cbce4c5716504eda6))
+
 ## [0.2.1](https://github.com/shishkin/solid-maplibre/compare/v0.2.0...v0.2.1) (2022-11-06)
 
 
