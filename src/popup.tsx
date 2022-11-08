@@ -10,9 +10,11 @@ export type PopUpProps = Partial<maplibre.PopupOptions> & {
 export function Popup(initial: PopUpProps) {
   const [props, options] = splitProps(initial, ["position", "content"]);
 
-  const popup = new maplibre.Popup(options);
+  let popup: maplibre.Popup | undefined;
 
   useMapEffect((map) => {
+    if (!popup) popup = new maplibre.Popup(options);
+
     if (props.position && props.content) {
       popup.setLngLat(props.position).setHTML(props.content).addTo(map);
     } else {
@@ -20,7 +22,7 @@ export function Popup(initial: PopUpProps) {
     }
   });
 
-  onCleanup(() => popup.remove());
+  onCleanup(() => popup?.remove());
 
   return <></>;
 }

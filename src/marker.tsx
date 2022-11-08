@@ -8,10 +8,11 @@ export type MarkerProps = Partial<maplibre.MarkerOptions> & {
 
 export function Marker(initial: MarkerProps) {
   const [props, options] = splitProps(initial, ["position"]);
-
-  const marker = new maplibre.Marker(options);
+  let marker: maplibre.Marker | undefined;
 
   useMapEffect((map) => {
+    if (!marker) marker = new maplibre.Marker(options);
+
     if (props.position) {
       marker.setLngLat(props.position).addTo(map);
     } else {
@@ -19,7 +20,7 @@ export function Marker(initial: MarkerProps) {
     }
   });
 
-  onCleanup(() => marker.remove());
+  onCleanup(() => marker?.remove());
 
   return <></>;
 }
