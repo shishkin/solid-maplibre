@@ -22,3 +22,8 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: coverage
+          path: coverage

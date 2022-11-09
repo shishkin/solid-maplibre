@@ -15,6 +15,11 @@ export default defineConfig({
       web: [/\.[jt]sx?$/],
     },
     setupFiles: "./src/vitest.ts",
+    coverage: {
+      all: true,
+      include: ["src/"],
+      reporter: ["text", "html-spa"],
+    },
   },
 
   resolve: {
