@@ -11,10 +11,10 @@
     "skipLibCheck": true,
     "allowJs": true,
     "noEmit": true,
-    "types": ["vite/client"],
+    "types": ["vite/client", "vitest/globals"],
     "jsx": "preserve",
     "jsxImportSource": "solid-js"
   },
-  "include": ["src", "examples", ".eslintrc.cjs", "vite.config.ts"],
+  "include": ["src", "examples", ".eslintrc.cjs", "vite.config.ts", "vitest.config.ts"],
   "exclude": ["node_modules", "dist"]
 }

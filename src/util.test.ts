@@ -1,4 +1,3 @@
-import { describe, it, expect } from "vitest";
 import { deepEqual } from "./util.js";
 
 describe("deepEqual", () => {

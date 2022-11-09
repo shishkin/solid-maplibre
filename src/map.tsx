@@ -13,7 +13,7 @@ import {
   createMemo,
 } from "solid-js";
 
-const MapContext = createContext<Accessor<maplibre.Map | undefined>>();
+export const MapContext = createContext<Accessor<maplibre.Map | undefined>>();
 
 export const useMap = () => useContext(MapContext);
 
