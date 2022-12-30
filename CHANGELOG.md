@@ -1,3 +1,10 @@
+## [0.2.4](https://github.com/shishkin/solid-maplibre/compare/v0.2.3...v0.2.4) (2022-12-30)
+
+
+### Bug Fixes
+
+* package version in lockfile ([a311e53](https://github.com/shishkin/solid-maplibre/commit/a311e536e4e4ff511bb1ec5ed1a53a7f05a90059))
+
 ## [0.2.3](https://github.com/shishkin/solid-maplibre/compare/v0.2.2...v0.2.3) (2022-11-08)
 
 
