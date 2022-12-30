@@ -5,11 +5,11 @@ import { resolve } from "node:path";
 
 export default defineConfig({
   plugins: [
-    solidPlugin(),
     dts({
       insertTypesEntry: true,
       rollupTypes: true,
     }),
+    solidPlugin(),
   ],
 
   build: {

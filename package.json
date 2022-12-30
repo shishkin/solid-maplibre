@@ -18,7 +18,7 @@
   "scripts": {
     "dev": "vite --open",
     "start": "npm run dev",
-    "clean": "rimraf dist/",
+    "clean": "rimraf dist/ coverage/",
     "build:vite": "vite build",
     "build:tsc": "tsc -p tsconfig.build.json",
     "build": "npm-run-all clean check build:vite",
