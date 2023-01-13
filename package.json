@@ -66,7 +66,7 @@
     "maplibre-gl": "^2.4.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.1",
-    "rimraf": "^3.0.2",
+    "rimraf": "^4.0.0",
     "semantic-release": "^20.0.0",
     "solid-js": "^1.6.6",
     "solid-testing-library": "^0.5.0",
