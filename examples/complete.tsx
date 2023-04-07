@@ -13,7 +13,8 @@ export function Complete() {
           "aspect-ratio": "calc(16/9)",
         }}
         options={{
-          center: [-76.53063297271729, 39.18174077994108],
+          center: [11.40416, 47.26475],
+          style: "https://demotiles.maplibre.org/styles/osm-bright-gl-style/style.json",
           zoom: 13,
         }}
       >
@@ -30,7 +31,7 @@ export function Complete() {
                   type: "Feature",
                   geometry: {
                     type: "Point",
-                    coordinates: [-76.53063297271729, 39.18174077994108],
+                    coordinates: [11.40416, 47.26475],
                   },
                 },
               ],
@@ -49,14 +50,14 @@ export function Complete() {
             }}
           />
         </Source>
-        <Marker position={[-76.53063297271729, 39.18174077994108]} />
+        <Marker position={[11.40416, 47.26475]} />
         <Popup
           anchor="top"
           offset={12}
           closeOnMove={false}
           closeOnClick={false}
           closeButton={false}
-          position={[-76.53063297271729, 39.18174077994108]}
+          position={[11.40416, 47.26475]}
           content="Popup"
         />
       </Map>
