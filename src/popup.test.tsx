@@ -3,7 +3,6 @@
 import { render } from "solid-testing-library";
 import { Popup } from "./popup.jsx";
 import { MapContext } from "./map.jsx";
-import { vi } from "vitest";
 import { LngLatLike, Map as MapLibre, Popup as PopupLibre, PopupOptions } from "maplibre-gl";
 import { createSignal } from "solid-js";
 
