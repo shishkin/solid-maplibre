@@ -51,7 +51,7 @@ export function Map(initial: MapProps) {
       container,
     });
 
-    map.once("load", () => setMap(map));
+    void map.once("load", () => setMap(map));
   });
 
   const interactive = createMemo(
