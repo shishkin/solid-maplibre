@@ -11,7 +11,9 @@ import {
   createEffect,
   splitProps,
   createMemo,
+  createUniqueId,
 } from "solid-js";
+import { useMaps } from "./maps.jsx";
 
 export const MapContext = createContext<Accessor<maplibre.Map | undefined>>();
 
@@ -24,6 +26,7 @@ export const useMapEffect = (f: (map: maplibre.Map) => void) =>
   });
 
 export type MapProps = {
+  id?: string;
   style?: JSX.CSSProperties;
   cursor?: string;
   options?: Partial<Omit<maplibre.MapOptions, "container">>;
@@ -40,9 +43,11 @@ const defaultProps: Partial<MapProps> = {
 
 export function Map(initial: MapProps) {
   const mergedProps = mergeProps(defaultProps, initial);
-  const [props, events] = splitProps(mergedProps, ["style", "cursor", "options", "children"]);
-  const container = (<div style={props.style} />) as HTMLDivElement;
+  const [props, events] = splitProps(mergedProps, ["id", "style", "cursor", "options", "children"]);
+  const id = createMemo(() => props.id ?? createUniqueId());
+  const container = (<div id={id()} style={props.style} />) as HTMLDivElement;
   const [map, setMap] = createSignal<maplibre.Map>();
+  const mapsContext = useMaps();
 
   onMount(() => {
     const map = new maplibre.Map({
@@ -50,6 +55,8 @@ export function Map(initial: MapProps) {
       ...props.options,
       container,
     });
+    console.log("Map mount:", mapsContext, map);
+    mapsContext?.onMapMount(map, id());
 
     void map.once("load", () => setMap(map));
   });
@@ -75,7 +82,10 @@ export function Map(initial: MapProps) {
     }
   });
 
-  onCleanup(() => map()?.remove());
+  onCleanup(() => {
+    map()?.remove();
+    mapsContext?.onMapUnmount(id());
+  });
 
   return (
     <MapContext.Provider value={map}>
