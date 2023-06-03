@@ -1,3 +1,18 @@
+# [0.3.0](https://github.com/shishkin/solid-maplibre/compare/v0.2.4...v0.3.0) (2023-06-03)
+
+
+### Bug Fixes
+
+* node version in CI ([8c3a2b5](https://github.com/shishkin/solid-maplibre/commit/8c3a2b5cbe00c9e7d5249dd1213077242dfa88b2))
+* update node to lts in CI ([daee729](https://github.com/shishkin/solid-maplibre/commit/daee7295227481548c325200b4e405e2dfc98bbf))
+* update node to lts in release ([eec9893](https://github.com/shishkin/solid-maplibre/commit/eec9893365ef3da0b4755e8dede71984fb6260ca))
+* vite import error ([4b5d1a3](https://github.com/shishkin/solid-maplibre/commit/4b5d1a326c20eb444df2e47a0b32455b1d800b46))
+
+
+### Features
+
+* add MapsProvider ([b02e31f](https://github.com/shishkin/solid-maplibre/commit/b02e31fc8fee98d7c5826cf2d3a5e6f7e4f83f1a)), closes [#58](https://github.com/shishkin/solid-maplibre/issues/58)
+
 ## [0.2.4](https://github.com/shishkin/solid-maplibre/compare/v0.2.3...v0.2.4) (2022-12-30)
 
 
