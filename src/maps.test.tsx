@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/unbound-method */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { render } from "solid-testing-library";
+import { render } from "@solidjs/testing-library";
 import { createMemo } from "solid-js";
 import { MapsProvider, useMaps } from "./maps.jsx";
 import { Map } from "./map.jsx";

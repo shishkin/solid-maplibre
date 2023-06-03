@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { render } from "solid-testing-library";
+import { render } from "@solidjs/testing-library";
 import { Popup } from "./popup.jsx";
 import { MapContext } from "./map.jsx";
 import { LngLatLike, Map as MapLibre, Popup as PopupLibre, PopupOptions } from "maplibre-gl";
