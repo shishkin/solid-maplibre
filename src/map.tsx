@@ -7,7 +7,6 @@ import {
   onMount,
   useContext,
   Accessor,
-  mergeProps,
   createEffect,
   splitProps,
   createMemo,
@@ -39,13 +38,8 @@ type MapEvents = Partial<{
   [P in keyof maplibre.MapEventType as `on${P}`]: (e: maplibre.MapEventType[P]) => void;
 }>;
 
-const defaultProps: Partial<MapProps> = {
-  style: { position: "relative", width: "100%", height: "100%" },
-};
-
 export function Map(initial: MapProps) {
-  const mergedProps = mergeProps(defaultProps, initial);
-  const [props, events] = splitProps(mergedProps, [
+  const [props, events] = splitProps(initial, [
     "id",
     "style",
     "class",
@@ -55,8 +49,18 @@ export function Map(initial: MapProps) {
     "children",
   ]);
   const id = createMemo(() => props.id ?? createUniqueId());
+  const defaultStyle = createMemo<JSX.CSSProperties | undefined>(() =>
+    !props.style && !props.class && !props.classList
+      ? { position: "relative", width: "100%", "aspect-ratio": "calc(16/9)" }
+      : undefined
+  );
   const container = (
-    <div id={id()} class={props.class} classList={props.classList} style={props.style} />
+    <div
+      id={id()}
+      class={props.class}
+      classList={props.classList}
+      style={props.style ?? defaultStyle()}
+    />
   ) as HTMLDivElement;
   const [map, setMap] = createSignal<maplibre.Map>();
   const mapsContext = useMaps();
