@@ -1,3 +1,11 @@
+## [0.4.1](https://github.com/shishkin/solid-maplibre/compare/v0.4.0...v0.4.1) (2023-06-05)
+
+
+### Bug Fixes
+
+* don't override provided styles ([86430b6](https://github.com/shishkin/solid-maplibre/commit/86430b6bcaa6b28070b30169dcf3255397feefb9))
+* remove console output ([c8e1141](https://github.com/shishkin/solid-maplibre/commit/c8e1141fb0b3cc528fb62c775bd762bb2234443a))
+
 # [0.4.0](https://github.com/shishkin/solid-maplibre/compare/v0.3.0...v0.4.0) (2023-06-05)
 
 
