@@ -67,7 +67,6 @@ export function Map(initial: MapProps) {
       ...props.options,
       container,
     });
-    console.log("Map mount:", mapsContext, map);
     mapsContext?.onMapMount(map, id());
 
     void map.once("load", () => setMap(map));

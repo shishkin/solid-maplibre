@@ -18,7 +18,6 @@ export function MapsProvider(props: MapsProviderProps) {
     equals: false,
   });
   const onMapMount = (map: maplibre.Map, id: string) => {
-    console.log("Setting map:", id, map);
     setMaps((maps) => maps.set(id, map));
   };
   const onMapUnmount = (id: string) =>
