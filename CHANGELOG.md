@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/shishkin/solid-maplibre/compare/v0.3.0...v0.4.0) (2023-06-05)
+
+
+### Features
+
+* add class and classList props ([473bda7](https://github.com/shishkin/solid-maplibre/commit/473bda7c565dbca66ca3465cd0385cd40bb17d1e))
+
 # [0.3.0](https://github.com/shishkin/solid-maplibre/compare/v0.2.4...v0.3.0) (2023-06-03)
 
 
