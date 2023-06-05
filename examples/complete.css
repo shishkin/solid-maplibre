@@ -1,0 +1,7 @@
+.map {
+  aspect-ratio: calc(16 / 9);
+}
+
+.w-half {
+  width: 50%;
+}

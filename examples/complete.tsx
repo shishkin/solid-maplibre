@@ -1,20 +1,14 @@
+import "maplibre-gl/dist/maplibre-gl.css";
+import "./complete.css";
 import { Layer, Map, Marker, Popup, Source } from "../src";
 import { NavigationControl, ScaleControl } from "../src/controls";
-import "maplibre-gl/dist/maplibre-gl.css";
 import { MapsProvider, useMaps } from "../src/maps.jsx";
 import { createMemo } from "solid-js";
 
 const MapsProbe = () => {
   const maps = useMaps()?.maps;
-  const keys = createMemo(() => {
-    console.log("Updated memo:", maps?.());
-    const keys: string[] = [];
-    for (const k of maps?.().keys() ?? []) {
-      keys.push(k);
-    }
-    return keys;
-  });
-  return <p>Mounted maps: {keys().join(", ")}</p>;
+  const keys = createMemo(() => [...(maps?.().keys() ?? [])].join(", "));
+  return <p>Mounted maps: {keys()}</p>;
 };
 
 export function Complete() {
@@ -24,9 +18,9 @@ export function Complete() {
       <MapsProvider>
         <MapsProbe />
         <Map
+          class="map"
+          classList={{ "w-half": true }}
           style={{
-            width: "50%",
-            "aspect-ratio": "calc(16/9)",
             "margin-block": "1em",
           }}
           options={{

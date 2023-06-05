@@ -28,6 +28,8 @@ export const useMapEffect = (f: (map: maplibre.Map) => void) =>
 export type MapProps = {
   id?: string;
   style?: JSX.CSSProperties;
+  class?: string;
+  classList?: Record<string, boolean | undefined>;
   cursor?: string;
   options?: Partial<Omit<maplibre.MapOptions, "container">>;
   children?: JSX.Element;
@@ -43,9 +45,19 @@ const defaultProps: Partial<MapProps> = {
 
 export function Map(initial: MapProps) {
   const mergedProps = mergeProps(defaultProps, initial);
-  const [props, events] = splitProps(mergedProps, ["id", "style", "cursor", "options", "children"]);
+  const [props, events] = splitProps(mergedProps, [
+    "id",
+    "style",
+    "class",
+    "classList",
+    "cursor",
+    "options",
+    "children",
+  ]);
   const id = createMemo(() => props.id ?? createUniqueId());
-  const container = (<div id={id()} style={props.style} />) as HTMLDivElement;
+  const container = (
+    <div id={id()} class={props.class} classList={props.classList} style={props.style} />
+  ) as HTMLDivElement;
   const [map, setMap] = createSignal<maplibre.Map>();
   const mapsContext = useMaps();
 
