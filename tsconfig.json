@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "jsxImportSource": "solid-js"
   },
-  "include": ["src", "examples", ".eslintrc.cjs", "vite.config.ts", "vitest.config.ts"],
+  "include": ["src", "examples", ".eslintrc.cjs", "*.ts"],
   "exclude": ["node_modules", "dist"]
 }

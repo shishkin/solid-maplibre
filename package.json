@@ -3,12 +3,16 @@
   "version": "0.0.0-development",
   "description": "SolidJS wrapper around MapLibre GL JS",
   "type": "module",
+  "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "browser": {},
+  "typesVersions": {},
   "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+    "solid": "./dist/index.jsx",
+    "import": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     }
   },
   "files": [
@@ -18,10 +22,8 @@
   "scripts": {
     "dev": "vite --open",
     "start": "npm run dev",
-    "clean": "rimraf dist/ coverage/",
-    "build:vite": "vite build",
-    "build:tsc": "tsc -p tsconfig.build.json",
-    "build": "npm-run-all clean check build:vite",
+    "build:tsup": "tsup",
+    "build": "npm-run-all check build:tsup",
     "test": "vitest",
     "check:types": "tsc -b",
     "check:lint": "eslint .",
@@ -70,9 +72,10 @@
     "rimraf": "5.0.1",
     "semantic-release": "21.0.7",
     "solid-js": "1.7.8",
+    "tsup": "6.7.0",
+    "tsup-preset-solid": "0.1.8",
     "typescript": "5.1.6",
     "vite": "4.4.4",
-    "vite-plugin-dts": "2.3.0",
     "vite-plugin-solid": "2.7.0",
     "vitest": "0.33.0"
   }

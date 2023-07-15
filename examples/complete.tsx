@@ -1,13 +1,20 @@
 import "maplibre-gl/dist/maplibre-gl.css";
 import "./complete.css";
-import { Layer, Map, Marker, Popup, Source } from "../src";
-import { NavigationControl, ScaleControl } from "../src/controls";
-import { MapsProvider, useMaps } from "../src/maps.jsx";
+import {
+  Layer,
+  Map,
+  Marker,
+  Popup,
+  Source,
+  NavigationControl,
+  ScaleControl,
+  MapsProvider,
+  useMaps,
+} from "../src/index.jsx";
 import { createMemo } from "solid-js";
 
 const MapsProbe = () => {
-  const maps = useMaps()?.maps;
-  const keys = createMemo(() => [...(maps?.().keys() ?? [])].join(", "));
+  const keys = createMemo(() => [...(useMaps()?.maps().keys() ?? [])].join(", "));
   return <p>Mounted maps: {keys()}</p>;
 };
 
