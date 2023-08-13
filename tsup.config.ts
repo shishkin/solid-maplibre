@@ -1,15 +1,12 @@
-import { defineConfig } from "tsup-preset-solid";
+import { defineConfig } from "tsup";
+import * as solid from "tsup-preset-solid";
 
-export default defineConfig(
-  {
-    entry: "src/index.tsx",
-  },
-  {
-    tsupOptions: (opts) => ({
-      ...opts,
-      clean: true,
-      sourcemap: true,
-      minify: true,
-    }),
-  },
-);
+export default defineConfig(() => {
+  const options = solid.parsePresetOptions({
+    entries: {
+      entry: "src/index.tsx",
+    },
+  });
+
+  return solid.generateTsupOptions(options);
+});
