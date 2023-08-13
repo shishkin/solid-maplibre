@@ -11,7 +11,7 @@ export default defineConfig({
     deps: {
       registerNodeLoader: true,
     },
-    transformMode: {
+    testTransformMode: {
       web: [/\.[jt]sx?$/],
     },
     setupFiles: "./src/vitest.ts",
