@@ -1,4 +1,14 @@
 {
   "typescript.preferences.importModuleSpecifierEnding": "js",
-  "javascript.preferences.importModuleSpecifierEnding": "js"
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.format.enable": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "eslint.format.enable": true,
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "eslint.format.enable": true,
+  }
 }

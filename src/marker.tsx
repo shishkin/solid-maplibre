@@ -1,26 +1,70 @@
 import { useMapEffect } from "./map.jsx";
 import * as maplibre from "maplibre-gl";
-import { onCleanup, splitProps } from "solid-js";
+import { createEffect, createSignal, onCleanup, splitProps } from "solid-js";
+import { createRegisterEventedListeners } from "./util.js";
 
 export type MarkerProps = Partial<maplibre.MarkerOptions> & {
   position?: maplibre.LngLatLike;
+} & {
+  onDragStart?: maplibre.Listener;
+  onDrag?: maplibre.Listener;
+  onDragEnd?: maplibre.Listener;
 };
 
 export function Marker(initial: MarkerProps) {
   const [props, options] = splitProps(initial, ["position"]);
-  let marker: maplibre.Marker | undefined;
+  // I am using this as I want solid to track it - but not to setup deep-tracking
+  let marker = new maplibre.Marker(options);
+  let [isOnMap, setIsOnMap] = createSignal(false);
 
   useMapEffect((map) => {
-    if (!marker) marker = new maplibre.Marker(options);
-
     if (props.position) {
-      marker.setLngLat(props.position).addTo(map);
+      marker.setLngLat(props.position);
+      if (!isOnMap()) {
+        marker.addTo(map);
+        setIsOnMap(true);
+      }
     } else {
-      marker.remove();
+      if (isOnMap()) {
+        marker.remove();
+        setIsOnMap(false);
+      }
     }
   });
 
-  onCleanup(() => marker?.remove());
+  createEffect(() => {
+    if (options.color) marker._color = options.color;
+  });
+
+  createEffect(() => {
+    marker.setDraggable(options.draggable);
+  });
+
+  createEffect(() => {
+    marker.setPitchAlignment(options.pitchAlignment);
+  });
+
+  createEffect(() => {
+    marker.setRotation(options.rotation);
+  });
+
+  createEffect(() => {
+    marker.setRotationAlignment(options.rotationAlignment);
+  });
+
+  createEffect(() => {
+    if (marker && initial.offset != null) marker.setOffset(initial.offset);
+  });
+
+  // createRegisterEventedListeners has a 'createEffect' within it
+  // eslint-disable-next-line solid/reactivity
+  createRegisterEventedListeners(marker, "dragstart", initial.onDragStart);
+  // eslint-disable-next-line solid/reactivity
+  createRegisterEventedListeners(marker, "drag", initial.onDrag);
+  // eslint-disable-next-line solid/reactivity
+  createRegisterEventedListeners(marker, "dragend", initial.onDragEnd);
+
+  onCleanup(() => marker.remove());
 
   return <></>;
 }

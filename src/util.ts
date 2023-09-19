@@ -1,5 +1,6 @@
 import type { GeoJSON, FeatureCollection, Geometry, Position } from "geojson";
-import type { Source, GeoJSONSource } from "maplibre-gl";
+import type { Source, GeoJSONSource, Evented, Listener } from "maplibre-gl";
+import { createEffect, onCleanup } from "solid-js";
 
 export function deepEqual(a: unknown, b: unknown): boolean {
   if (typeof a !== typeof b) return false;
@@ -50,4 +51,20 @@ export function geometryPoints(g: Geometry): Position[] {
     default:
       return [];
   }
+}
+
+export function createRegisterEventedListeners(
+  evented: Evented | undefined,
+  eventName: string,
+  listener: Listener | undefined,
+) {
+  createEffect(() => {
+    console.log(evented, eventName, listener);
+    const oldListener = listener;
+    const oldEvented = evented;
+    if (oldListener == null || oldEvented == null) return;
+
+    oldEvented.on(eventName, oldListener);
+    onCleanup(() => oldEvented.off(eventName, oldListener));
+  });
 }
