@@ -11,9 +11,7 @@ import {
   MapsProvider,
   useMaps,
 } from "../src/index.jsx";
-import { createMemo, createSignal } from "solid-js";
-
-const colors = ["#F00", "#0F0", "#00F"];
+import { createMemo } from "solid-js";
 
 const MapsProbe = () => {
   const keys = createMemo(() => [...(useMaps()?.maps().keys() ?? [])].join(", "));
@@ -21,8 +19,6 @@ const MapsProbe = () => {
 };
 
 export function Complete() {
-  const [markerColor, setMarkerColor] = createSignal("#FFF");
-
   return (
     <section>
       <h2>Complete Example</h2>
@@ -76,10 +72,8 @@ export function Complete() {
           <Marker
             position={[11.40416, 47.26475]}
             draggable={true}
-            color={markerColor()}
-            onDrag={(e) => {
+            onDrag={(event) => {
               console.log("Dragging!");
-              setMarkerColor(colors[Math.floor(Math.random() * colors.length)]);
             }}
           />
           <Popup
