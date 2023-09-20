@@ -73,7 +73,7 @@ export function Complete() {
             position={[11.40416, 47.26475]}
             draggable={true}
             onDrag={(event) => {
-              console.log("Dragging!");
+              console.log("Dragging!", event);
             }}
           />
           <Popup

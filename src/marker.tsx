@@ -14,8 +14,8 @@ export type MarkerProps = Partial<maplibre.MarkerOptions> & {
 export function Marker(initial: MarkerProps) {
   const [props, options] = splitProps(initial, ["position"]);
   // I am using this as I want solid to track it - but not to setup deep-tracking
-  let marker = new maplibre.Marker(options);
-  let [isOnMap, setIsOnMap] = createSignal(false);
+  const marker = new maplibre.Marker(options);
+  const [isOnMap, setIsOnMap] = createSignal(false);
 
   useMapEffect((map) => {
     if (props.position) {

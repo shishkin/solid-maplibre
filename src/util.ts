@@ -59,7 +59,6 @@ export function createRegisterEventedListeners(
   listener: Listener | undefined,
 ) {
   createEffect(() => {
-    console.log(evented, eventName, listener);
     const oldListener = listener;
     const oldEvented = evented;
     if (oldListener == null || oldEvented == null) return;
