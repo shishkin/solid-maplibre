@@ -1,5 +1,5 @@
 import { render } from "solid-js/web";
-import { Complete } from "./complete";
+import { Complete } from "./complete.jsx";
 
 function App() {
   return (

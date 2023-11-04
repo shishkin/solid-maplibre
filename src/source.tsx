@@ -1,6 +1,6 @@
 import * as maplibre from "maplibre-gl";
 import { createContext, JSX, onCleanup, useContext, createUniqueId, createMemo } from "solid-js";
-import { useMapEffect, useMap } from "./map";
+import { useMapEffect, useMap } from "./map.jsx";
 
 export interface SourceProps {
   id?: string;
