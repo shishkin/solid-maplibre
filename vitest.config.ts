@@ -9,7 +9,11 @@ export default defineConfig({
     environment: "jsdom",
     globals: true,
     deps: {
-      registerNodeLoader: true,
+      optimizer: {
+        web: {
+          exclude: ["solid-js"],
+        },
+      },
     },
     setupFiles: "./src/vitest.ts",
     coverage: {
