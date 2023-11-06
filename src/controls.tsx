@@ -1,6 +1,6 @@
 import * as maplibre from "maplibre-gl";
 import { JSX, onCleanup, splitProps } from "solid-js";
-import { useMapEffect, useMap } from "./map";
+import { useMapEffect, useMap } from "./map.jsx";
 
 export const createControl =
   <Control extends maplibre.IControl, Options>(ctor: new (options: Options) => Control) =>

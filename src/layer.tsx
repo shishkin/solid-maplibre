@@ -1,8 +1,8 @@
 import * as maplibre from "maplibre-gl";
 import { onCleanup, createUniqueId, splitProps, createMemo } from "solid-js";
-import { useMapEffect, useMap } from "./map";
-import { useSource } from "./source";
-import { deepEqual } from "./util";
+import { useMapEffect, useMap } from "./map.jsx";
+import { useSource } from "./source.jsx";
+import { deepEqual } from "./util.js";
 
 export type LayerProps = {
   id?: string;

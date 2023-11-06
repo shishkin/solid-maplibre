@@ -1,4 +1,4 @@
-import { useMapEffect } from "./map";
+import { useMapEffect } from "./map.jsx";
 import * as maplibre from "maplibre-gl";
 import { onCleanup, splitProps } from "solid-js";
 
