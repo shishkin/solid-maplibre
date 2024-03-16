@@ -51,6 +51,7 @@ export function Complete() {
                       type: "Point",
                       coordinates: [11.40416, 47.26475],
                     },
+                    properties: {},
                   },
                 ],
               },
