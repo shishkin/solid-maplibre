@@ -1,5 +1,6 @@
 import { render } from "solid-js/web";
 import { Complete } from "./complete.jsx";
+import Click from "./click.jsx";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <h1>Examples</h1>
 
       <Complete />
+      <Click />
     </main>
   );
 }
