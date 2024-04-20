@@ -54,10 +54,10 @@
     "@semantic-release/git": "10.0.1",
     "@solidjs/testing-library": "0.8.7",
     "@testing-library/jest-dom": "6.4.2",
-    "@types/eslint": "8.56.9",
+    "@types/eslint": "8.56.10",
     "@types/testing-library__jest-dom": "5.14.9",
-    "@typescript-eslint/eslint-plugin": "7.6.0",
-    "@typescript-eslint/parser": "7.6.0",
+    "@typescript-eslint/eslint-plugin": "7.7.0",
+    "@typescript-eslint/parser": "7.7.0",
     "@vitest/coverage-v8": "1.5.0",
     "babel-preset-solid": "1.8.16",
     "eslint": "8.57.0",
@@ -75,7 +75,7 @@
     "tsup": "8.0.2",
     "tsup-preset-solid": "2.2.0",
     "typescript": "5.4.5",
-    "vite": "5.2.8",
+    "vite": "5.2.9",
     "vite-plugin-solid": "2.10.2",
     "vitest": "1.5.0"
   }
