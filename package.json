@@ -48,17 +48,17 @@
     "solid-js": "*"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.2.2",
+    "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "19.2.2",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@solidjs/testing-library": "0.8.7",
-    "@testing-library/jest-dom": "6.4.2",
+    "@testing-library/jest-dom": "6.4.5",
     "@types/eslint": "8.56.10",
     "@types/testing-library__jest-dom": "5.14.9",
-    "@typescript-eslint/eslint-plugin": "7.7.0",
-    "@typescript-eslint/parser": "7.7.0",
-    "@vitest/coverage-v8": "1.5.0",
+    "@typescript-eslint/eslint-plugin": "7.8.0",
+    "@typescript-eslint/parser": "7.8.0",
+    "@vitest/coverage-v8": "1.6.0",
     "babel-preset-solid": "1.8.17",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
@@ -69,14 +69,14 @@
     "maplibre-gl": "4.2.0",
     "npm-run-all2": "6.1.2",
     "prettier": "3.2.5",
-    "rimraf": "5.0.5",
-    "semantic-release": "23.0.8",
+    "rimraf": "5.0.7",
+    "semantic-release": "23.1.1",
     "solid-js": "1.8.17",
     "tsup": "8.0.2",
     "tsup-preset-solid": "2.2.0",
     "typescript": "5.4.5",
-    "vite": "5.2.10",
+    "vite": "5.2.11",
     "vite-plugin-solid": "2.10.2",
-    "vitest": "1.5.0"
+    "vitest": "1.6.0"
   }
 }
