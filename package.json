@@ -56,14 +56,14 @@
     "@testing-library/jest-dom": "6.4.6",
     "@types/eslint": "8.56.10",
     "@types/testing-library__jest-dom": "6.0.0",
-    "@typescript-eslint/eslint-plugin": "7.16.0",
-    "@typescript-eslint/parser": "7.16.0",
-    "@vitest/coverage-v8": "2.0.2",
+    "@typescript-eslint/eslint-plugin": "7.16.1",
+    "@typescript-eslint/parser": "7.16.1",
+    "@vitest/coverage-v8": "2.0.3",
     "babel-preset-solid": "1.8.18",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-solid": "0.14.1",
-    "husky": "9.0.11",
+    "husky": "9.1.1",
     "jsdom": "24.1.0",
     "jsdom-worker": "0.3.0",
     "maplibre-gl": "4.5.0",
@@ -72,11 +72,11 @@
     "rimraf": "6.0.1",
     "semantic-release": "24.0.0",
     "solid-js": "1.8.18",
-    "tsup": "8.1.0",
+    "tsup": "8.2.0",
     "tsup-preset-solid": "2.2.0",
     "typescript": "5.5.3",
-    "vite": "5.3.3",
+    "vite": "5.3.4",
     "vite-plugin-solid": "2.10.2",
-    "vitest": "2.0.2"
+    "vitest": "2.0.3"
   }
 }
