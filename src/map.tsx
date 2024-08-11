@@ -21,7 +21,9 @@ export const useMap = () => useContext(MapContext);
 export const useMapEffect = (f: (map: maplibre.Map) => void) =>
   createEffect(() => {
     const map = useMap()?.();
-    map && f(map);
+    if (map) {
+      f(map);
+    }
   });
 
 export type MapProps = {
