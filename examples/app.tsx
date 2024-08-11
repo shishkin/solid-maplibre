@@ -14,4 +14,6 @@ function App() {
 }
 
 const container = document.getElementById("app");
-container && render(() => <App />, container);
+if (container) {
+  render(() => <App />, container);
+}
