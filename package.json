@@ -30,7 +30,7 @@
     "check:test": "vitest run --coverage",
     "check": "npm-run-all check:*",
     "semantic-release": "semantic-release",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
