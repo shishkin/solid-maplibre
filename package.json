@@ -70,7 +70,7 @@
     "npm-run-all2": "6.2.2",
     "prettier": "3.3.3",
     "rimraf": "6.0.1",
-    "semantic-release": "24.0.0",
+    "semantic-release": "24.1.0",
     "solid-js": "1.8.21",
     "tsup": "8.2.4",
     "tsup-preset-solid": "2.2.0",
