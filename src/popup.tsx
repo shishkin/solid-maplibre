@@ -1,28 +1,29 @@
 import { useMapEffect } from "./map.jsx";
 import * as maplibre from "maplibre-gl";
-import { onCleanup, splitProps } from "solid-js";
+import { onCleanup, createRenderEffect, splitProps, children, type FlowProps } from "solid-js";
 
-export type PopUpProps = Partial<maplibre.PopupOptions> & {
+export type PopUpProps = FlowProps<Partial<maplibre.PopupOptions> & {
   position?: maplibre.LngLatLike;
-  content?: string;
-};
+}, Node>;
 
 export function Popup(initial: PopUpProps) {
-  const [props, options] = splitProps(initial, ["position", "content"]);
+  const [props, options] = splitProps(initial, ["position", "children"]);
 
-  let popup: maplibre.Popup | undefined;
+  const popup = new maplibre.Popup(options);
+
+  const kids = children(() => props.children)
+  
+  createRenderEffect(() => popup.setDOMContent(kids()));
 
   useMapEffect((map) => {
-    if (!popup) popup = new maplibre.Popup(options);
-
-    if (props.position && props.content) {
-      popup.setLngLat(props.position).setHTML(props.content).addTo(map);
+    if (props.position) {
+      popup.setLngLat(props.position).addTo(map);
     } else {
       popup.remove();
     }
   });
 
-  onCleanup(() => popup?.remove());
+  onCleanup(() => popup.remove());
 
   return <></>;
 }
