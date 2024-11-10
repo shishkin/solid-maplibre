@@ -1,6 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", ":semanticCommits", "helpers:disableTypesNodeMajor"],
+  "extends": [
+    "config:recommended",
+    ":semanticCommits",
+    "helpers:disableTypesNodeMajor"
+  ],
   "timezone": "Europe/Berlin",
   "schedule": ["every weekend on the 3rd week of the month"],
   "automergeType": "branch",
@@ -13,14 +17,14 @@
       "automerge": true
     },
     {
-      "matchPackagePatterns": ["solid"],
       "groupName": "solid",
-      "automerge": true
+      "automerge": true,
+      "matchPackageNames": ["/solid/"]
     },
     {
-      "matchPackagePatterns": ["maplibre"],
       "groupName": "maplibre",
-      "automerge": true
+      "automerge": true,
+      "matchPackageNames": ["/maplibre/"]
     }
   ]
 }
