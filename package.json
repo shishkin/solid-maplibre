@@ -62,7 +62,7 @@
     "babel-preset-solid": "1.9.3",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-solid": "0.14.3",
+    "eslint-plugin-solid": "0.14.4",
     "husky": "9.1.6",
     "jsdom": "25.0.1",
     "jsdom-worker": "0.3.0",
