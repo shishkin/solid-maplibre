@@ -1,8 +1,9 @@
 /// <reference types="vitest" />
-import { defineConfig } from "vite";
 import solidPlugin from "vite-plugin-solid";
+import { defineConfig } from "vitest/config";
 
 export default defineConfig({
+  // @ts-expect-error vite and vitest type mismatch
   plugins: [solidPlugin()],
 
   test: {
