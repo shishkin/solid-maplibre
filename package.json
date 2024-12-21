@@ -55,8 +55,8 @@
     "@solidjs/testing-library": "0.8.10",
     "@testing-library/jest-dom": "6.6.3",
     "@types/eslint": "9.6.1",
-    "@typescript-eslint/eslint-plugin": "8.18.0",
-    "@typescript-eslint/parser": "8.18.0",
+    "@typescript-eslint/eslint-plugin": "8.18.1",
+    "@typescript-eslint/parser": "8.18.1",
     "@vitest/coverage-v8": "2.1.8",
     "babel-preset-solid": "1.9.3",
     "eslint": "8.57.0",
@@ -66,7 +66,7 @@
     "jsdom": "25.0.1",
     "jsdom-worker": "0.3.0",
     "maplibre-gl": "4.7.1",
-    "npm-run-all2": "7.0.1",
+    "npm-run-all2": "7.0.2",
     "prettier": "3.4.2",
     "rimraf": "6.0.1",
     "semantic-release": "24.2.0",
@@ -74,7 +74,7 @@
     "tsup": "8.3.5",
     "tsup-preset-solid": "2.2.0",
     "typescript": "5.7.2",
-    "vite": "6.0.3",
+    "vite": "6.0.5",
     "vite-plugin-solid": "2.11.0",
     "vitest": "2.1.8"
   }
