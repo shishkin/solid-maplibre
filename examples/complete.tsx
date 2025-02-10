@@ -69,7 +69,13 @@ export function Complete() {
               }}
             />
           </Source>
-          <Marker position={[11.40416, 47.26475]} />
+          <Marker
+            position={[11.40416, 47.26475]}
+            draggable={true}
+            onDrag={(event) => {
+              console.log("Dragging!", event);
+            }}
+          />
           <Popup
             anchor="top"
             offset={12}
