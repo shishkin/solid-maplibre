@@ -1,3 +1,21 @@
+# [0.5.0](https://github.com/shishkin/solid-maplibre/compare/v0.4.1...v0.5.0) (2025-03-09)
+
+
+### Bug Fixes
+
+* deprecated husky install ([d0c5a3c](https://github.com/shishkin/solid-maplibre/commit/d0c5a3c1d00afc11c5808b065dbfd6ff5d7a1b9d))
+* eslint errors ([ed9532f](https://github.com/shishkin/solid-maplibre/commit/ed9532f418c7eea9bb8ba2fd66cf8f9fa410346f))
+* type error ([d0ae81b](https://github.com/shishkin/solid-maplibre/commit/d0ae81b7d7c03c809aa4a4e6bde437e325e9422a))
+* vitest config ([d316d70](https://github.com/shishkin/solid-maplibre/commit/d316d705df206bd664e7e88ff1e7989faa3859a4))
+* vitest config change ([a1865a1](https://github.com/shishkin/solid-maplibre/commit/a1865a1132dd283b1b315cf0fe05994bdc3ffa4d))
+* vitest coverage breaking change ([54a10f6](https://github.com/shishkin/solid-maplibre/commit/54a10f6af209e08f15c126ceefbad11539f8721b))
+
+
+### Features
+
+* marker events ([4baa741](https://github.com/shishkin/solid-maplibre/commit/4baa74104c17e708a71334615a8b328fdfe9a26f))
+* more marker options ([857a967](https://github.com/shishkin/solid-maplibre/commit/857a96725906405ad36079621c567a33046cca42))
+
 ## [0.4.1](https://github.com/shishkin/solid-maplibre/compare/v0.4.0...v0.4.1) (2023-06-05)
 
 
