@@ -29,6 +29,12 @@ export function Marker(initial: MarkerProps) {
       m.setLngLat(props.position);
 
       m.setDraggable(options.draggable);
+      m.setOffset(options.offset ?? [0, 0]);
+      m.setOpacity(options.opacity, options.opacityWhenCovered);
+      m.setPitchAlignment(options.pitchAlignment);
+      m.setRotation(options.rotation);
+      m.setRotationAlignment(options.rotationAlignment);
+      m.setSubpixelPositioning(options.subpixelPositioning ?? false);
     }
   });
 
