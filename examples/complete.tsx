@@ -11,12 +11,16 @@ import {
   MapsProvider,
   useMaps,
 } from "../src/index.jsx";
-import { createMemo } from "solid-js";
+import { createEffect, createMemo, createSignal } from "solid-js";
 
 const MapsProbe = () => {
   const keys = createMemo(() => [...(useMaps()?.maps().keys() ?? [])].join(", "));
   return <p>Mounted maps: {keys()}</p>;
 };
+
+const [markerPosition, setMarkerPosition] = createSignal<[number, number]>([11.40416, 47.26475]);
+
+createEffect(() => console.log("Marker position:", markerPosition()));
 
 export function Complete() {
   return (
@@ -69,7 +73,11 @@ export function Complete() {
               }}
             />
           </Source>
-          <Marker position={[11.40416, 47.26475]} />
+          <Marker
+            position={markerPosition()}
+            draggable={true}
+            ondrag={(e) => setMarkerPosition(e.target.getLngLat().toArray())}
+          />
           <Popup
             anchor="top"
             offset={12}

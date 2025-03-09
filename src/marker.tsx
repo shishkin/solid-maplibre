@@ -1,26 +1,44 @@
 import { useMapEffect } from "./map.jsx";
 import * as maplibre from "maplibre-gl";
-import { onCleanup, splitProps } from "solid-js";
+import { createEffect, createSignal, onCleanup, onMount, splitProps } from "solid-js";
+import { addEventListeners, type MapEvents } from "./util.js";
+
+type MarkerEvents = Pick<MapEvents<maplibre.Marker>, "ondrag" | "ondragstart" | "ondragend">;
 
 export type MarkerProps = Partial<maplibre.MarkerOptions> & {
-  position?: maplibre.LngLatLike;
-};
+  position: maplibre.LngLatLike;
+} & MarkerEvents;
 
 export function Marker(initial: MarkerProps) {
-  const [props, options] = splitProps(initial, ["position"]);
-  let marker: maplibre.Marker | undefined;
+  const [props, rest] = splitProps(initial, ["position"]);
+  const [events, options] = splitProps(rest, ["ondrag", "ondragstart", "ondragend"]);
+  const [marker, setMarker] = createSignal<maplibre.Marker>();
 
-  useMapEffect((map) => {
-    if (!marker) marker = new maplibre.Marker(options);
+  onMount(() => {
+    setMarker(new maplibre.Marker(options));
+  });
 
-    if (props.position) {
-      marker.setLngLat(props.position).addTo(map);
-    } else {
-      marker.remove();
+  createEffect(() => {
+    const m = marker();
+    m && addEventListeners(m, events);
+  });
+
+  createEffect(() => {
+    const m = marker();
+    if (m) {
+      m.setLngLat(props.position);
+
+      m.setDraggable(options.draggable);
     }
   });
 
-  onCleanup(() => marker?.remove());
+  useMapEffect((map) => {
+    marker()?.addTo(map);
+  });
+
+  onCleanup(() => {
+    marker()?.remove();
+  });
 
   return <></>;
 }
