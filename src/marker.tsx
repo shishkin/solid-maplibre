@@ -20,7 +20,9 @@ export function Marker(initial: MarkerProps) {
 
   createEffect(() => {
     const m = marker();
-    m && addEventListeners(m, events);
+    if (m) {
+      addEventListeners(m, events);
+    }
   });
 
   createEffect(() => {

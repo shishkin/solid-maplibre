@@ -67,9 +67,7 @@ export function addEventListeners<T extends maplibre.Evented>(target: T, listene
     }
 
     const name = key.slice(2).toLowerCase();
-    target.on(name, (e) => {
-      listener(e);
-    });
+    target.on(name, listener);
     onCleanup(() => {
       target.off(name, listener);
     });

@@ -85,7 +85,9 @@ export function Map(initial: MapProps) {
 
   createEffect(() => {
     const m = map();
-    m && addEventListeners(m, events);
+    if (m) {
+      addEventListeners(m, events);
+    }
   });
 
   onCleanup(() => {
