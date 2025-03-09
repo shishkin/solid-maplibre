@@ -13,6 +13,7 @@ import {
   createUniqueId,
 } from "solid-js";
 import { useMaps } from "./maps.jsx";
+import { addEventListeners, type MapEvents } from "./util.js";
 
 export const MapContext = createContext<Accessor<maplibre.Map | undefined>>();
 
@@ -36,10 +37,6 @@ export type MapProps = {
   children?: JSX.Element;
 } & MapEvents;
 
-type MapEvents = Partial<{
-  [P in keyof maplibre.MapEventType as `on${P}`]: (e: maplibre.MapEventType[P]) => void;
-}>;
-
 export function Map(initial: MapProps) {
   const [props, events] = splitProps(initial, [
     "id",
@@ -54,7 +51,7 @@ export function Map(initial: MapProps) {
   const defaultStyle = createMemo<JSX.CSSProperties | undefined>(() =>
     !props.style && !props.class && !props.classList
       ? { position: "relative", width: "100%", "aspect-ratio": "calc(16/9)" }
-      : undefined
+      : undefined,
   );
   const container = (
     <div
@@ -79,24 +76,16 @@ export function Map(initial: MapProps) {
   });
 
   const interactive = createMemo(
-    () => typeof props.options?.interactive === "undefined" || props.options.interactive
+    () => typeof props.options?.interactive === "undefined" || props.options.interactive,
   );
   createEffect(() => {
     const canvas = map()?.getCanvas();
-    if (canvas) canvas.style.cursor = props.cursor ?? interactive() ? "grab" : "auto";
+    if (canvas) canvas.style.cursor = (props.cursor ?? interactive()) ? "grab" : "auto";
   });
 
   createEffect(() => {
     const m = map();
-    if (!m) return;
-
-    for (const [key, handler] of Object.entries(events)) {
-      if (!key.startsWith("on")) continue;
-
-      const name = key.slice(2).toLowerCase();
-      m.on(name as never, handler as never);
-      onCleanup(() => m.off(name as never, handler));
-    }
+    m && addEventListeners(m, events);
   });
 
   onCleanup(() => {

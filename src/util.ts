@@ -1,5 +1,7 @@
 import type { GeoJSON, FeatureCollection, Geometry, Position } from "geojson";
 import type { Source, GeoJSONSource } from "maplibre-gl";
+import * as maplibre from "maplibre-gl";
+import { onCleanup } from "solid-js";
 
 export function deepEqual(a: unknown, b: unknown): boolean {
   if (typeof a !== typeof b) return false;
@@ -49,5 +51,27 @@ export function geometryPoints(g: Geometry): Position[] {
       return g.coordinates.flat(1);
     default:
       return [];
+  }
+}
+
+export type MapEvents<T extends maplibre.Evented = maplibre.Map> = Partial<{
+  [P in keyof maplibre.MapEventType as `on${P}`]: (
+    e: Omit<maplibre.MapEventType[P], "target"> & { target: T },
+  ) => void;
+}>;
+
+export function addEventListeners<T extends maplibre.Evented>(target: T, listeners: MapEvents<T>) {
+  for (const [key, listener] of Object.entries(listeners)) {
+    if (!key.startsWith("on")) {
+      continue;
+    }
+
+    const name = key.slice(2).toLowerCase();
+    target.on(name, (e) => {
+      listener(e);
+    });
+    onCleanup(() => {
+      target.off(name, listener);
+    });
   }
 }
