@@ -85,8 +85,9 @@ export function Complete() {
             closeOnClick={false}
             closeButton={false}
             position={[11.40416, 47.26475]}
-            content="Popup"
-          />
+          >
+            Popup
+          </Popup>
         </Map>
         <Map
           id="second-map"
