@@ -80,7 +80,9 @@ export function Map(initial: MapProps) {
   );
   createEffect(() => {
     const canvas = map()?.getCanvas();
-    if (canvas) canvas.style.cursor = (props.cursor ?? interactive()) ? "grab" : "auto";
+    if (canvas && interactive()) {
+      canvas.style.cursor = props.cursor ?? "unset";
+    }
   });
 
   createEffect(() => {
