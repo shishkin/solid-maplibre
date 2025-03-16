@@ -1,5 +1,5 @@
 import "maplibre-gl/dist/maplibre-gl.css";
-import { Map, useMapEffect } from "../src/index.jsx";
+import { Map, useMapEffect } from "solid-maplibre";
 import { createSignal } from "solid-js";
 
 interface MapFlyerProps {

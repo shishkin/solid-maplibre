@@ -3,6 +3,10 @@
   "version": "0.0.0-development",
   "description": "SolidJS wrapper around MapLibre GL JS",
   "type": "module",
+  "engines": {
+    "node": ">=18",
+    "pnpm": "^10.0.0"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -20,15 +24,16 @@
     "src"
   ],
   "scripts": {
-    "dev": "vite --open",
-    "start": "npm run dev",
-    "build:tsup": "tsup",
-    "build": "npm-run-all check build:tsup",
+    "dev": "pnpm run --filter example dev",
+    "start": "pnpm run dev",
+    "build": "tsup",
+    "postbuild": "pnpm run check",
     "test": "vitest",
     "check:types": "tsc -b",
     "check:lint": "eslint .",
     "check:test": "vitest run --coverage",
-    "check": "npm-run-all check:*",
+    "check:example": "pnpm run --filter example check",
+    "check": "pnpm run \"/^check:.*/\"",
     "semantic-release": "semantic-release",
     "prepare": "husky"
   },
@@ -66,16 +71,14 @@
     "jsdom": "26.0.0",
     "jsdom-worker": "0.3.0",
     "maplibre-gl": "5.2.0",
-    "npm-run-all2": "7.0.2",
     "prettier": "3.5.3",
-    "rimraf": "6.0.1",
     "semantic-release": "24.2.3",
     "solid-js": "1.9.5",
     "tsup": "8.4.0",
     "tsup-preset-solid": "2.2.0",
     "typescript": "5.8.2",
-    "vite": "6.2.2",
     "vite-plugin-solid": "2.11.6",
     "vitest": "3.0.8"
-  }
+  },
+  "packageManager": "pnpm@10.6.3+sha512.bb45e34d50a9a76e858a95837301bfb6bd6d35aea2c5d52094fa497a467c43f5c440103ce2511e9e0a2f89c3d6071baac3358fc68ac6fb75e2ceb3d2736065e6"
 }

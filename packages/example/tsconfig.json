@@ -4,17 +4,15 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "esModuleInterop": true,
     "isolatedModules": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true,
-    "allowJs": true,
     "noEmit": true,
-    "types": ["vite/client", "vitest/globals"],
+    "skipLibCheck": true,
+    "types": ["vite/client"],
     "jsx": "preserve",
     "jsxImportSource": "solid-js"
   },
-  "include": ["src", ".eslintrc.cjs", "*.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src", "*.ts"],
+  "exclude": ["node_modules"]
 }

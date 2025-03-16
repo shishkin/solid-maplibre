@@ -10,7 +10,7 @@ import {
   ScaleControl,
   MapsProvider,
   useMaps,
-} from "../src/index.jsx";
+} from "solid-maplibre";
 import { createEffect, createMemo, createSignal } from "solid-js";
 
 const MapsProbe = () => {

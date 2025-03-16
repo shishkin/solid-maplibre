@@ -37,4 +37,4 @@ Add map component and ensure to specify container size in `style`, `class` or `c
 />
 ```
 
-See more [usage examples](examples).
+See more [usage examples](packages/example).
