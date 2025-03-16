@@ -29,6 +29,9 @@ importers:
       '@types/eslint':
         specifier: 9.6.1
         version: 9.6.1
+      '@types/geojson':
+        specifier: ^7946.0.16
+        version: 7946.0.16
       '@typescript-eslint/eslint-plugin':
         specifier: 8.26.1
         version: 8.26.1(@typescript-eslint/parser@8.26.1(eslint@8.57.0)(typescript@5.8.2))(eslint@8.57.0)(typescript@5.8.2)
