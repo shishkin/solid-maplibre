@@ -73,7 +73,7 @@
     "maplibre-gl": "5.3.1",
     "prettier": "3.5.3",
     "semantic-release": "24.2.3",
-    "solid-js": "1.9.5",
+    "solid-js": "1.9.6",
     "tsup": "8.4.0",
     "tsup-preset-solid": "2.2.0",
     "typescript": "5.8.3",
