@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "maplibre-gl": "5.5.0",
-    "solid-js": "1.9.6",
+    "solid-js": "1.9.7",
     "solid-maplibre": "workspace:*"
   },
   "devDependencies": {
