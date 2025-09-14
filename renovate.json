@@ -17,6 +17,9 @@
       "automerge": true
     },
     {
+      "matchCategories": ["ci"],
+      "automerge": true
+    },{
       "groupName": "solid",
       "automerge": true,
       "matchPackageNames": ["/solid/"]
