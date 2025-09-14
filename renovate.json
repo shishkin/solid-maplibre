@@ -12,7 +12,7 @@
   "ignoreDeps": ["eslint"],
   "packageRules": [
     {
-      "matchDepTypes": ["devDependencies"],
+      "matchDepTypes": ["devDependencies", "packageManager"],
       "groupName": "devDependencies",
       "automerge": true
     },
