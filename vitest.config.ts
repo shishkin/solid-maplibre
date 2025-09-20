@@ -1,9 +1,9 @@
 /// <reference types="vitest" />
 import solidPlugin from "vite-plugin-solid";
-import { defineConfig } from "vitest/config";
+import { defineConfig, type Plugin } from "vitest/config";
 
 export default defineConfig({
-  plugins: [solidPlugin()],
+  plugins: [solidPlugin() as Plugin],
 
   test: {
     environment: "jsdom",
