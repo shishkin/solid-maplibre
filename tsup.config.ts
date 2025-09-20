@@ -8,5 +8,7 @@ export default defineConfig(() => {
     },
   });
 
-  return solid.generateTsupOptions(options);
+  const opts = solid.generateTsupOptions(options);
+  console.log(JSON.stringify(opts, null, 2));
+  return opts;
 });
