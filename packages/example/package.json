@@ -14,8 +14,8 @@
     "solid-maplibre": "workspace:*"
   },
   "devDependencies": {
-    "typescript": "5.9.2",
-    "vite": "7.1.6",
+    "typescript": "5.9.3",
+    "vite": "7.1.9",
     "vite-plugin-solid": "2.11.9"
   }
 }
