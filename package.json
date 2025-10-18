@@ -68,7 +68,7 @@
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-solid": "0.14.5",
     "husky": "9.1.7",
-    "jsdom": "27.0.0",
+    "jsdom": "27.0.1",
     "jsdom-worker": "0.3.0",
     "maplibre-gl": "5.9.0",
     "prettier": "3.6.2",
