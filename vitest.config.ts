@@ -1,9 +1,9 @@
 /// <reference types="vitest" />
 import solidPlugin from "vite-plugin-solid";
-import { defineConfig, type Plugin } from "vitest/config";
+import { defineConfig } from "vitest/config";
 
 export default defineConfig({
-  plugins: [solidPlugin() as Plugin],
+  plugins: [solidPlugin()],
 
   test: {
     environment: "jsdom",
@@ -17,7 +17,7 @@ export default defineConfig({
     },
     setupFiles: "./src/vitest.ts",
     coverage: {
-      all: true,
+      enabled: true,
       include: ["src/"],
       reporter: ["text", "html-spa"],
     },
