@@ -9,7 +9,7 @@
     "check": "tsc -b"
   },
   "dependencies": {
-    "maplibre-gl": "5.13.0",
+    "maplibre-gl": "5.14.0",
     "solid-js": "1.9.10",
     "solid-maplibre": "workspace:*"
   },
