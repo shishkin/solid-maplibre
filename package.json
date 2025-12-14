@@ -53,32 +53,32 @@
     "solid-js": "*"
   },
   "devDependencies": {
-    "@commitlint/cli": "20.1.0",
-    "@commitlint/config-conventional": "20.0.0",
+    "@commitlint/cli": "20.2.0",
+    "@commitlint/config-conventional": "20.2.0",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@solidjs/testing-library": "0.8.10",
     "@testing-library/jest-dom": "6.9.1",
     "@types/eslint": "9.6.1",
     "@types/geojson": "^7946.0.16",
-    "@typescript-eslint/eslint-plugin": "8.46.4",
-    "@typescript-eslint/parser": "8.46.4",
-    "@vitest/coverage-v8": "4.0.13",
+    "@typescript-eslint/eslint-plugin": "8.49.0",
+    "@typescript-eslint/parser": "8.49.0",
+    "@vitest/coverage-v8": "4.0.15",
     "eslint": "8.57.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-solid": "0.14.5",
     "husky": "9.1.7",
-    "jsdom": "27.2.0",
+    "jsdom": "27.3.0",
     "jsdom-worker": "0.3.0",
     "maplibre-gl": "5.14.0",
-    "prettier": "3.6.2",
+    "prettier": "3.7.4",
     "semantic-release": "25.0.2",
     "solid-js": "1.9.10",
     "tsup": "8.5.1",
     "tsup-preset-solid": "2.2.0",
     "typescript": "5.9.3",
     "vite-plugin-solid": "2.11.10",
-    "vitest": "4.0.13"
+    "vitest": "4.0.15"
   },
-  "packageManager": "pnpm@10.23.0+sha512.21c4e5698002ade97e4efe8b8b4a89a8de3c85a37919f957e7a0f30f38fbc5bbdd05980ffe29179b2fb6e6e691242e098d945d1601772cad0fef5fb6411e2a4b"
+  "packageManager": "pnpm@10.25.0+sha512.5e82639027af37cf832061bcc6d639c219634488e0f2baebe785028a793de7b525ffcd3f7ff574f5e9860654e098fe852ba8ac5dd5cefe1767d23a020a92f501"
 }
