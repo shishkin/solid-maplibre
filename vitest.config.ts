@@ -3,7 +3,10 @@ import solidPlugin from "vite-plugin-solid";
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
-  plugins: [solidPlugin()],
+  plugins: [
+    // @ts-expect-error remove when fixed
+    solidPlugin(),
+  ],
 
   test: {
     environment: "jsdom",
