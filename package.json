@@ -70,7 +70,7 @@
     "husky": "9.1.7",
     "jsdom": "27.4.0",
     "jsdom-worker": "0.3.0",
-    "maplibre-gl": "5.15.0",
+    "maplibre-gl": "5.16.0",
     "prettier": "3.7.4",
     "semantic-release": "25.0.2",
     "solid-js": "1.9.10",
