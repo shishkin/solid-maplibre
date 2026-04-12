@@ -61,24 +61,24 @@
     "@testing-library/jest-dom": "6.9.1",
     "@types/eslint": "9.6.1",
     "@types/geojson": "^7946.0.16",
-    "@typescript-eslint/eslint-plugin": "8.57.1",
-    "@typescript-eslint/parser": "8.57.1",
-    "@vitest/coverage-v8": "4.1.0",
+    "@typescript-eslint/eslint-plugin": "8.58.1",
+    "@typescript-eslint/parser": "8.58.1",
+    "@vitest/coverage-v8": "4.1.4",
     "eslint": "8.57.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-solid": "0.14.5",
     "husky": "9.1.7",
-    "jsdom": "29.0.1",
+    "jsdom": "29.0.2",
     "jsdom-worker": "0.3.0",
     "maplibre-gl": "5.22.0",
-    "prettier": "3.8.1",
+    "prettier": "3.8.2",
     "semantic-release": "25.0.3",
     "solid-js": "1.9.12",
     "tsup": "8.5.1",
     "tsup-preset-solid": "2.2.0",
     "typescript": "5.9.3",
     "vite-plugin-solid": "2.11.12",
-    "vitest": "4.1.0"
+    "vitest": "4.1.4"
   },
-  "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be"
+  "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319"
 }
