@@ -76,7 +76,7 @@
     "solid-js": "1.9.12",
     "tsup": "8.5.1",
     "tsup-preset-solid": "2.2.0",
-    "typescript": "5.9.3",
+    "typescript": "6.0.3",
     "vite-plugin-solid": "2.11.12",
     "vitest": "4.1.4"
   },
