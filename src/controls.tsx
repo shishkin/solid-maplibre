@@ -10,7 +10,7 @@ export const createControl =
 
     useMapEffect((map) => {
       if (!control) {
-        control = new ctor(options.options ?? ({} as Options)) as maplibre.IControl;
+        control = new ctor(options.options ?? {} as Options);
         map.addControl(control, own.position);
       }
     });
