@@ -1,7 +1,4 @@
 packages:
   - "packages/*"
 
-allowBuilds:
-  esbuild: true
-
 savePrefix: ""
