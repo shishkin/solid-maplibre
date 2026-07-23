@@ -61,8 +61,8 @@
     "@testing-library/jest-dom": "6.9.1",
     "@types/eslint": "9.6.1",
     "@types/geojson": "^7946.0.16",
-    "@typescript-eslint/eslint-plugin": "8.64.0",
-    "@typescript-eslint/parser": "8.64.0",
+    "@typescript-eslint/eslint-plugin": "8.65.0",
+    "@typescript-eslint/parser": "8.65.0",
     "@vitest/coverage-v8": "4.1.10",
     "eslint": "8.57.0",
     "eslint-config-prettier": "10.1.8",
@@ -71,13 +71,13 @@
     "jsdom": "29.1.1",
     "jsdom-worker": "0.3.0",
     "maplibre-gl": "5.24.0",
-    "prettier": "3.9.5",
-    "semantic-release": "25.0.7",
+    "prettier": "3.9.6",
+    "semantic-release": "25.0.8",
     "solid-js": "1.9.14",
     "tsdown": "^0.22.0",
     "typescript": "6.0.3",
     "unplugin-solid": "2.0.0",
     "vitest": "4.1.10"
   },
-  "packageManager": "pnpm@11.13.0"
+  "packageManager": "pnpm@11.16.0"
 }
