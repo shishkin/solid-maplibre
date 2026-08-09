@@ -79,5 +79,5 @@
     "unplugin-solid": "2.0.0",
     "vitest": "4.1.10"
   },
-  "packageManager": "pnpm@11.20.0"
+  "packageManager": "pnpm@11.21.0"
 }
