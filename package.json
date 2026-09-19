@@ -71,7 +71,7 @@
     "jsdom": "29.1.1",
     "jsdom-worker": "0.3.0",
     "maplibre-gl": "5.24.0",
-    "prettier": "3.9.6",
+    "prettier": "3.9.8",
     "semantic-release": "25.0.9",
     "solid-js": "1.9.14",
     "tsdown": "^0.23.0",
