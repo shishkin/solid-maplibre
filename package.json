@@ -4,8 +4,7 @@
   "description": "SolidJS wrapper around MapLibre GL JS",
   "type": "module",
   "engines": {
-    "node": ">=18",
-    "pnpm": "^12.0.0"
+    "node": ">=18"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -79,5 +78,5 @@
     "unplugin-solid": "2.0.0",
     "vitest": "4.1.11"
   },
-  "packageManager": "pnpm@11.27.0"
+  "packageManager": "pnpm@12.5.1"
 }

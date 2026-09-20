@@ -2,3 +2,4 @@ packages:
   - "packages/*"
 
 savePrefix: ""
+pmOnFail: ignore
