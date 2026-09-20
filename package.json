@@ -65,7 +65,7 @@
     "@vitest/coverage-v8": "5.0.1",
     "eslint": "8.57.0",
     "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-solid": "0.18.0",
+    "eslint-plugin-solid": "0.14.5",
     "husky": "9.1.7",
     "jsdom": "30.1.0",
     "jsdom-worker": "0.3.0",
