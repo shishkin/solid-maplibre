@@ -34,9 +34,10 @@ export function Layer(initial: LayerProps) {
     if (!map.getLayer(id())) return;
 
     for (const [k, v] of Object.entries(props.layer.paint ?? {})) {
-      const old = map.getPaintProperty(id(), k);
+      const name = k as keyof maplibre.AllPaintProperties;
+      const old = map.getPaintProperty(id(), name);
       if (!deepEqual(old, v)) {
-        map.setPaintProperty(id(), k, v);
+        map.setPaintProperty(id(), name, v);
       }
     }
 

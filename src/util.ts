@@ -54,13 +54,20 @@ export function geometryPoints(g: Geometry): Position[] {
   }
 }
 
-export type MapEvents<T extends maplibre.Evented = maplibre.Map> = Partial<{
+// Evented subclasses are not assignable to the bare Evented type, so erase the event map
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type AnyEvented = maplibre.Evented<any>;
+
+export type MapEvents<T extends AnyEvented = maplibre.Map> = Partial<{
   [P in keyof maplibre.MapEventType as `on${P}`]: (
     e: Omit<maplibre.MapEventType[P], "target"> & { target: T },
   ) => void;
 }>;
 
-export function addEventListeners<T extends maplibre.Evented>(target: T, listeners: MapEvents<T>) {
+export function addEventListeners<T extends AnyEvented>(
+  target: T,
+  listeners: MapEvents<T>,
+) {
   for (const [key, listener] of Object.entries(listeners)) {
     if (!key.startsWith("on")) {
       continue;

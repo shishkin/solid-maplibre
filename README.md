@@ -21,6 +21,17 @@ Don't forget to import MapLibre GL JS CSS styles:
 import "maplibre-gl/dist/maplibre-gl.css";
 ```
 
+With MapLibre GL JS v6 the worker URL must be set once when your app is bundled.
+See the [MapLibre ESM guide](https://maplibre.org/maplibre-gl-js/docs/#esm) for the snippet
+for your bundler. For Vite:
+
+```tsx
+import { setWorkerUrl } from "maplibre-gl";
+import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
+
+setWorkerUrl(workerUrl);
+```
+
 Add map component and ensure to specify container size in `style`, `class` or `classList` attributes:
 
 ```tsx
