@@ -13,7 +13,6 @@ export default defineConfig([
     platform: "neutral",
     clean: false,
     dts: false,
-    inputOptions: { transform: { jsx: "preserve" } },
     outExtensions: () => ({ js: ".jsx" }),
   },
 ]);
