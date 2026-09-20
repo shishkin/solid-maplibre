@@ -10,7 +10,7 @@ export default defineConfig({
     globals: true,
     deps: {
       optimizer: {
-        web: {
+        client: {
           exclude: ["solid-js"],
         },
       },
