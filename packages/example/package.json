@@ -10,12 +10,12 @@
   },
   "dependencies": {
     "maplibre-gl": "6.15.0",
-    "solid-js": "1.9.15",
+    "solid-js": "1.9.18",
     "solid-maplibre": "workspace:*"
   },
   "devDependencies": {
     "typescript": "6.0.3",
     "vite": "8.3.5",
-    "vite-plugin-solid": "2.11.14"
+    "vite-plugin-solid": "2.11.15"
   }
 }
