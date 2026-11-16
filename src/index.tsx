@@ -4,4 +4,5 @@ export * from "./source.jsx";
 export * from "./layer.jsx";
 export * from "./marker.jsx";
 export * from "./popup.jsx";
+export * from "./image.jsx";
 export * from "./controls.jsx";
