@@ -6,6 +6,9 @@ export const createControl =
   <Control extends maplibre.IControl, Options>(ctor: new (options: Options) => Control) =>
   (props: { options?: Options; position?: maplibre.ControlPosition }): JSX.Element => {
     const [own, options] = splitProps(props, ["position"]);
+    // Read the context during setup: cleanup functions run without an owner, so `useMap()` would
+    // return `undefined` there.
+    const map = useMap();
     let control: maplibre.IControl | undefined;
 
     useMapEffect((map) => {
@@ -16,7 +19,7 @@ export const createControl =
     });
 
     onCleanup(() => {
-      const m = useMap()?.();
+      const m = map?.();
       if (control && m && m.hasControl(control)) m.removeControl(control);
     });
 
