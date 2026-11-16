@@ -9,7 +9,9 @@ import { Map } from "./map.jsx";
 vi.mock("maplibre-gl", () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const Map = vi.fn() as any;
+  Map.prototype.on = vi.fn();
   Map.prototype.once = vi.fn();
+  Map.prototype.remove = vi.fn();
   return { Map };
 });
 

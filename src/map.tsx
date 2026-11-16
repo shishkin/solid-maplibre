@@ -11,21 +11,36 @@ import {
   splitProps,
   createMemo,
   createUniqueId,
+  on,
 } from "solid-js";
 import { useMaps } from "./maps.jsx";
 import { addEventListeners, type MapEvents } from "./util.js";
 
 export const MapContext = createContext<Accessor<maplibre.Map | undefined>>();
 
+/**
+ * Bumped on every `style.load`, i.e. whenever `setStyle` wipes all sources, layers and images
+ * from the map's style.
+ */
+const StyleRevisionContext = createContext<Accessor<number>>();
+
 export const useMap = () => useContext(MapContext);
 
-export const useMapEffect = (f: (map: maplibre.Map) => void) =>
+/**
+ * Runs `f` once the nearest map has loaded. Re-runs when tracked dependencies change and after
+ * every style switch, so anything added to the style (sources, layers) can restore itself.
+ */
+export const useMapEffect = (f: (map: maplibre.Map) => void) => {
+  const map = useMap();
+  const styleRevision = useContext(StyleRevisionContext);
   createEffect(() => {
-    const map = useMap()?.();
-    if (map) {
-      f(map);
+    const m = map?.();
+    if (m) {
+      styleRevision?.();
+      f(m);
     }
   });
+};
 
 export type MapProps = {
   id?: string;
@@ -62,7 +77,11 @@ export function Map(initial: MapProps) {
     />
   ) as HTMLDivElement;
   const [map, setMap] = createSignal<maplibre.Map>();
+  const [styleRevision, setStyleRevision] = createSignal(0);
   const mapsContext = useMaps();
+  // Held separately from the `map` signal, which is only set once the map has loaded, so that a
+  // map unmounted before its `load` event is still removed.
+  let instance: maplibre.Map | undefined;
 
   onMount(() => {
     const map = new maplibre.Map({
@@ -70,10 +89,28 @@ export function Map(initial: MapProps) {
       ...props.options,
       container,
     });
+    instance = map;
     mapsContext?.onMapMount(map, id());
 
+    map.on("style.load", () => setStyleRevision((r) => r + 1));
     void map.once("load", () => setMap(map));
   });
+
+  // `style` is the only map option that commonly changes at runtime; the rest of `options` is
+  // only read when the map is constructed.
+  createEffect(
+    on(
+      () => props.options?.style,
+      (style) => {
+        const m = map();
+        // A diffed style update removes every source and layer missing from the new style without
+        // firing `style.load`, so child components would never restore theirs. A full reload does
+        // fire it.
+        if (m && style) m.setStyle(style, { diff: false });
+      },
+      { defer: true },
+    ),
+  );
 
   const interactive = createMemo(
     () => typeof props.options?.interactive === "undefined" || props.options.interactive,
@@ -93,14 +130,16 @@ export function Map(initial: MapProps) {
   });
 
   onCleanup(() => {
-    map()?.remove();
+    instance?.remove();
     mapsContext?.onMapUnmount(id());
   });
 
   return (
     <MapContext.Provider value={map}>
-      {container}
-      {props.children}
+      <StyleRevisionContext.Provider value={styleRevision}>
+        {container}
+        {props.children}
+      </StyleRevisionContext.Provider>
     </MapContext.Provider>
   );
 }
