@@ -1,9 +1,22 @@
 import { useMapEffect } from "./map.jsx";
 import * as maplibre from "maplibre-gl";
-import { createEffect, createSignal, onCleanup, onMount, splitProps } from "solid-js";
+import { createEffect, createMemo, createSignal, onCleanup, splitProps, untrack } from "solid-js";
 import { addEventListeners, type MapEvents } from "./util.js";
 
 type MarkerEvents = Pick<MapEvents<maplibre.Marker>, "ondrag" | "ondragstart" | "ondragend">;
+
+/**
+ * Options that `maplibre.Marker` only reads in its constructor; changing any of them rebuilds the
+ * marker. All other options are updated in place through the marker's setters.
+ */
+const constructionOptions = [
+  "element",
+  "anchor",
+  "color",
+  "scale",
+  "className",
+  "clickTolerance",
+] as const satisfies readonly (keyof maplibre.MarkerOptions)[];
 
 export type MarkerProps = Partial<maplibre.MarkerOptions> & {
   position: maplibre.LngLatLike;
@@ -14,8 +27,15 @@ export function Marker(initial: MarkerProps) {
   const [events, options] = splitProps(rest, ["ondrag", "ondragstart", "ondragend"]);
   const [marker, setMarker] = createSignal<maplibre.Marker>();
 
-  onMount(() => {
-    setMarker(new maplibre.Marker(options));
+  const construction = createMemo(() => constructionOptions.map((key) => options[key]), undefined, {
+    equals: (a, b) => a.every((v, i) => v === b[i]),
+  });
+
+  createEffect(() => {
+    construction();
+    const m = new maplibre.Marker(untrack(() => ({ ...options })));
+    setMarker(m);
+    onCleanup(() => m.remove());
   });
 
   createEffect(() => {
@@ -42,10 +62,6 @@ export function Marker(initial: MarkerProps) {
 
   useMapEffect((map) => {
     marker()?.addTo(map);
-  });
-
-  onCleanup(() => {
-    marker()?.remove();
   });
 
   return <></>;
