@@ -19,7 +19,6 @@ export function Layer(initial: LayerProps) {
   const sourceId = useSource();
 
   useMapEffect((map) => {
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (!sourceId || map.getLayer(id())) return;
 
     map.addLayer({
@@ -30,7 +29,6 @@ export function Layer(initial: LayerProps) {
   });
 
   useMapEffect((map) => {
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (!map.getLayer(id())) return;
 
     for (const [k, v] of Object.entries(props.layer.paint ?? {})) {

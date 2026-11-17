@@ -10,8 +10,11 @@
   "automergeType": "branch",
   "prHourlyLimit": 0,
   "minimumReleaseAgePackageManagerSync": true,
-  "ignoreDeps": ["eslint"],
   "packageRules": [
+    {
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "<6.1.0"
+    },
     {
       "matchDepTypes": ["devDependencies", "packageManager"],
       "groupName": "devDependencies",
