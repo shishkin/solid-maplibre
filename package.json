@@ -3,16 +3,11 @@
   "version": "0.0.0-development",
   "description": "SolidJS wrapper around MapLibre GL JS",
   "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "browser": {},
-  "typesVersions": {},
   "exports": {
-    "solid": "./dist/index.jsx",
-    "import": {
+    ".": {
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "solid": "./dist/index.jsx"
     }
   },
   "files": [
