@@ -52,7 +52,7 @@
     "@solidjs/testing-library": "0.8.10",
     "@testing-library/jest-dom": "7.0.1",
     "@types/geojson": "^7946.0.16",
-    "@vitest/coverage-v8": "5.1.0",
+    "@vitest/coverage-v8": "5.1.1",
     "eslint": "10.15.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-solid": "0.19.0",
@@ -65,9 +65,9 @@
     "solid-js": "1.9.19",
     "tsdown": "^0.23.0",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.72.2",
+    "typescript-eslint": "8.73.0",
     "unplugin-solid": "2.0.0",
-    "vitest": "5.1.0"
+    "vitest": "5.1.1"
   },
   "packageManager": "pnpm@12.21.0"
 }
