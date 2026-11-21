@@ -62,11 +62,11 @@
     "maplibre-gl": "6.19.0",
     "prettier": "3.10.1",
     "semantic-release": "26.0.1",
-    "solid-js": "1.9.20",
+    "solid-js": "2.0.3",
     "tsdown": "^0.23.0",
     "typescript": "6.0.3",
     "typescript-eslint": "8.73.0",
-    "unplugin-solid": "2.0.0",
+    "unplugin-solid": "3.0.0",
     "vitest": "5.1.1"
   },
   "packageManager": "pnpm@12.21.0"
