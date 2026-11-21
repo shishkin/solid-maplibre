@@ -27,8 +27,8 @@ importers:
         specifier: 0.8.10
         version: 0.8.10(solid-js@1.9.20)
       '@testing-library/jest-dom':
-        specifier: 7.0.1
-        version: 7.0.1(@testing-library/dom@10.4.0)(vitest@5.1.1)
+        specifier: 8.0.0
+        version: 8.0.0(@testing-library/dom@10.4.0)(vitest@5.1.1)
       '@types/geojson':
         specifier: ^7946.0.16
         version: 7946.0.16
@@ -76,7 +76,7 @@ importers:
         version: 8.73.0(eslint@10.15.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3)
       unplugin-solid:
         specifier: 2.0.0
-        version: 2.0.0(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.0)(vitest@5.1.1))(rolldown@1.3.2)(solid-js@1.9.20)(supports-color@7.2.0)(vite@8.3.8(@types/node@22.13.10)(jiti@2.7.0))
+        version: 2.0.0(@testing-library/jest-dom@8.0.0(@testing-library/dom@10.4.0)(vitest@5.1.1))(rolldown@1.3.2)(solid-js@1.9.20)(supports-color@7.2.0)(vite@8.3.8(@types/node@22.13.10)(jiti@2.7.0))
       vitest:
         specifier: 5.1.1
         version: 5.1.1(@types/node@22.13.10)(@vitest/coverage-v8@5.1.1)(jsdom@31.0.1)(vite@8.3.8(@types/node@22.13.10)(jiti@2.7.0))
@@ -829,6 +829,16 @@ packages:
     peerDependencies:
       '@testing-library/dom': '>=10 <11'
       vitest: '>= 0.32'
+    peerDependenciesMeta:
+      vitest:
+        optional: true
+
+  '@testing-library/jest-dom@8.0.0':
+    resolution: {integrity: sha512-Nu45KEeFgP/ydCMipnisMblq6YHViqEFi3fKN0a40s+zdKDDD7vEPCEavS0i7i4RxmclcEIL8q2o42pu+WgNgg==}
+    engines: {node: '>=22', npm: '>=6', yarn: '>=1'}
+    peerDependencies:
+      '@testing-library/dom': '>=10 <11'
+      vitest: '>=5 <6'
     peerDependenciesMeta:
       vitest:
         optional: true
@@ -3859,6 +3869,19 @@ snapshots:
       redent: 3.0.0
     optionalDependencies:
       vitest: 5.1.1(@types/node@22.13.10)(@vitest/coverage-v8@5.1.1)(jsdom@31.0.1)(vite@8.3.8(@types/node@22.13.10)(jiti@2.7.0))
+    optional: true
+
+  '@testing-library/jest-dom@8.0.0(@testing-library/dom@10.4.0)(vitest@5.1.1)':
+    dependencies:
+      '@adobe/css-tools': 4.4.2
+      '@testing-library/dom': 10.4.0
+      aria-query: 5.3.2
+      css.escape: 1.5.1
+      dom-accessibility-api: 0.6.3
+      picocolors: 1.1.1
+      redent: 3.0.0
+    optionalDependencies:
+      vitest: 5.1.1(@types/node@22.13.10)(@vitest/coverage-v8@5.1.1)(jsdom@31.0.1)(vite@8.3.8(@types/node@22.13.10)(jiti@2.7.0))
 
   '@tybys/wasm-util@0.10.4':
     dependencies:
@@ -5685,7 +5708,7 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  unplugin-solid@2.0.0(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.0)(vitest@5.1.1))(rolldown@1.3.2)(solid-js@1.9.20)(supports-color@7.2.0)(vite@8.3.8(@types/node@22.13.10)(jiti@2.7.0)):
+  unplugin-solid@2.0.0(@testing-library/jest-dom@8.0.0(@testing-library/dom@10.4.0)(vitest@5.1.1))(rolldown@1.3.2)(solid-js@1.9.20)(supports-color@7.2.0)(vite@8.3.8(@types/node@22.13.10)(jiti@2.7.0)):
     dependencies:
       '@babel/core': 7.29.7(supports-color@7.2.0)
       babel-preset-solid: 1.9.12(@babel/core@7.29.7(supports-color@7.2.0))(solid-js@1.9.20)
@@ -5695,7 +5718,7 @@ snapshots:
       unplugin: 3.3.0(rolldown@1.3.2)(vite@8.3.8(@types/node@22.13.10)(jiti@2.7.0))
       vitefu: 1.1.3(vite@8.3.8(@types/node@22.13.10)(jiti@2.7.0))
     optionalDependencies:
-      '@testing-library/jest-dom': 7.0.1(@testing-library/dom@10.4.0)(vitest@5.1.1)
+      '@testing-library/jest-dom': 8.0.0(@testing-library/dom@10.4.0)(vitest@5.1.1)
       vite: 8.3.8(@types/node@22.13.10)(jiti@2.7.0)
     transitivePeerDependencies:
       - '@farmfe/core'

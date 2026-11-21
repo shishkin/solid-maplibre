@@ -50,7 +50,7 @@
     "@semantic-release/changelog": "7.0.0",
     "@semantic-release/git": "11.0.1",
     "@solidjs/testing-library": "0.8.10",
-    "@testing-library/jest-dom": "7.0.1",
+    "@testing-library/jest-dom": "8.0.0",
     "@types/geojson": "^7946.0.16",
     "@vitest/coverage-v8": "5.1.1",
     "eslint": "10.15.0",
